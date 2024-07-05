@@ -1,16 +1,313 @@
 ---
-
+// import Head from "/src/layouts/CommonHead.astro";
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+   <!-- <Head /> -->
+   <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+      <title>Ecotour</title>
+
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      />
+      <!-- <link
+      rel="icon"
+      href="public/assets/favicon/favicon.ico"
+      type="image/x-icon"
+   />
+   <link
+      rel="apple-touch-icon"
+      href="public/assets/favicon/apple-touch-icon.png"
+   /> -->
+      <!-- <script src="/src/scripts/main.js" defer=""></script> -->
+
+      <meta property="og:title" content="Ecotour" />
+      <meta
+         property="og:description"
+         content="Discover with EcoTour Barahona, your specialist in Ecotourism a new face of the Dominican Republic, more human, more authentic!"
+      />
+      <meta property="og:image" content="" />
+      <meta property="og:url" content="" />
+   </head>
+
+   <body>
+      <main>
+         <section id="home">
+            <div class="grunge-border btm"></div>
+
+            <div class="page-title">
+               <h2>Discover a hidden Paradise</h2>
+               <h1>
+                  <span>Deep South West,</span>
+                  <span>Dominican Republic</span>
+               </h1>
+               <button class="btn">
+                  <span>Book Now</span>
+               </button>
+            </div>
+         </section>
+         <section id="trips">
+            <div class="trips-container">
+               <div class="trip-box">
+                  <img src="public/images/home/tips/1.png" alt="" />
+                  <p>Day-Trips</p>
+               </div>
+               <div class="trip-box">
+                  <img src="public/images/home/tips/2.png" alt="" />
+                  <p>Multi-day Trips</p>
+               </div>
+
+               <div class="trip-box">
+                  <img src="public/images/home/tips/3.png" alt="" />
+                  <p>Private tours</p>
+               </div>
+            </div>
+         </section>
+         <section id="about">
+            <div class="grunge-border btm top"></div>
+
+            <div class="about-container">
+               <div class="about-content">
+                  <div class="section-title">
+                     <h2>Welcome to the Deep Southwest</h2>
+                  </div>
+                  <p>
+                     Discover with EcoTour Barahona, your specialist in
+                     Ecotourism a new face of the Dominican Republic, more
+                     human, more authentic!
+                  </p>
+                  <p>
+                     We have artistically designed unique excursions for you,
+                     accompanied by professional and passionate local guides who
+                     will show you the best of this part of the country.
+                  </p>
+                  <button class="btn">
+                     <span>Know More</span>
+                  </button>
+               </div>
+
+               <div class="about-video">
+                  <div class="about-video-wrapper">
+                     <video
+                        src="public/videos/about.mp4"
+                        id="about-video"
+                        poster="public/images/home/about-cover.png"
+                        muted></video>
+                     <div class="video-controls-wrapper">
+                        <div class="video-controls">
+                           <div class="play-btn-wrapper">
+                              <i class="fa-solid fa-pause fa-play play-btn"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section id="experiences">
+            <div class="section-title">
+               <h2>Featured Travel Experiences</h2>
+            </div>
+
+            <div class="experiences-container">
+               <div class="row">
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/1.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$55</span>
+                     </div>
+                  </div>
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/2.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$60</span>
+                     </div>
+                  </div>
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/3.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$99</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/4.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$99</span>
+                     </div>
+                  </div>
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/5.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$105</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/6.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$105</span>
+                     </div>
+                  </div>
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/7.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$119</span>
+                     </div>
+                  </div>
+                  <div class="experience-card">
+                     <img src="public/images/home/experiences/8.jpg" alt="" />
+                     <div class="content">
+                        <p>Garden of Eden</p>
+                        <span>$295</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section id="features">
+            <div class="section-title">
+               <h2>Why book with EcoTour Barahona?</h2>
+            </div>
+
+            <div class="grunge-border btm top"></div>
+
+            <div class="features-container">
+               <div class="feature-card">
+                  <img src="public/images/home/features/1.png" alt="" />
+                  <p>
+                     Our day trips not only allow you to visit the Southwest,
+                     but also to experience it.
+                  </p>
+               </div>
+               <div class="feature-card">
+                  <img src="public/images/home/features/2.png" alt="" />
+                  <p>
+                     There are guided by professional and passionate Dominicans
+                     and show you the best and unexpected sides of the Dominican
+                     Republic.
+                  </p>
+               </div>
+               <div class="feature-card">
+                  <img src="public/images/home/features/3.png" alt="" />
+                  <p>
+                     Benefit from small group sizes and guaranteed weekly
+                     departures.
+                  </p>
+               </div>
+            </div>
+         </section>
+         <section id="opinions">
+            <div class="opinions-container">
+               <div class="row title">
+                  <div class="section-title">
+                     <h2>Opinions from previous visitors</h2>
+                  </div>
+                  <button class="btn">
+                     <span>See all opinions</span>
+                  </button>
+               </div>
+               <div class="row opinion">
+                  <img src="public/images/home/profile.png" alt="" />
+                  <div class="content">
+                     <p class="name">Alberto Johnson</p>
+                     <p class="title">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                     </p>
+                     <span
+                        >Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Accusantium, dolores vitae officiis hic recusandae
+                        eos?</span
+                     >
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section id="book">
+            <div class="grunge-border btm"></div>
+
+            <div class="book-container">
+               <div class="title">
+                  <img src="public/images/home/calendar.png" alt="" />
+                  <div class="section-title">
+                     <h2>Book Now</h2>
+                     <h2>Lorem ipsum dolor sit</h2>
+                  </div>
+               </div>
+               <button class="btn invert">
+                  <span>Check the dates</span>
+               </button>
+            </div>
+         </section>
+      </main>
+      <footer>
+         <div class="footer-wrapper">
+            <div class="col general">
+               <img src="public/images/logo/full-light.png" alt="" />
+               <p>
+                  Ecotour Barahona is your favourite specialist for authentic,
+                  unique and memorable round trips, day trips and activities in
+                  the Southwest of the Dominican Republic.
+               </p>
+               <img src="public/images/logo/dr-has-it-all.png" alt="" />
+               Travel environmentally friendly with us and discover the main destinations
+               of the Dominican Republic.
+            </div>
+            <div class="col about-us">
+               <div class="title">About Us</div>
+               <p class="link">About Ecotour</p>
+               <p class="link">Barahona</p>
+               <p class="link">Our team</p>
+               <p class="link">Guestbook</p>
+               <p class="link">Imprint</p>
+            </div>
+            <div class="col custormer-service">
+               <div class="title">About Us</div>
+               <p class="link">About Ecotour</p>
+               <p class="link">Barahona</p>
+               <p class="link">Our team</p>
+               <p class="link">Guestbook</p>
+               <p class="link">Imprint</p>
+            </div>
+            <div class="col reservations">
+               <div class="title">Reservations & Bookings</div>
+               <div class="link">
+                  <p>Monday to Friday</p>
+                  <span>From 8:00 am to 8:00 pm</span>
+               </div>
+               <div class="link">
+                  <p>Monday to Friday</p>
+                  <span>From 9:00 am to 5:00 pm</span>
+               </div>
+               <div class="link">
+                  <p>Atlantic Standard Time</p>
+                  <span><i></i> +1 (809) 856 2260</span>
+               </div>
+            </div>
+            <div class="col socials">
+               <div class="title">Follow Us</div>
+               <div class="socials-container">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-x-twitter"></i>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </body>
 </html>
