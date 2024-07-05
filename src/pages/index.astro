@@ -1,22 +1,44 @@
 ---
-// import Head from "/src/layouts/CommonHead.astro";
+import Head from "../layouts/CommonHead.astro";
+import "../styles/index.css";
+
+import { Image, Picture } from "astro:assets";
+
+import Trip_1 from "../assets/images/home/trips/1.png";
+import Trip_2 from "../assets/images/home/trips/2.png";
+import Trip_3 from "../assets/images/home/trips/3.png";
+
+import Experience_1 from "../assets/images/home/experiences/1.jpg";
+import Experience_2 from "../assets/images/home/experiences/2.jpg";
+import Experience_3 from "../assets/images/home/experiences/3.jpg";
+import Experience_4 from "../assets/images/home/experiences/4.jpg";
+import Experience_5 from "../assets/images/home/experiences/5.jpg";
+import Experience_6 from "../assets/images/home/experiences/6.jpg";
+import Experience_7 from "../assets/images/home/experiences/7.jpg";
+import Experience_8 from "../assets/images/home/experiences/8.jpg";
+
+import Feature_1 from "../assets/images/home/features/1.png";
+import Feature_2 from "../assets/images/home/features/2.png";
+import Feature_3 from "../assets/images/home/features/3.png";
+
+import Profile from "../assets/images/home/profile.png";
 ---
 
 <!doctype html>
 <html lang="en">
-   <!-- <Head /> -->
-   <head>
-      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="IE=7" />
+   <Head />
 
-      <title>Ecotour</title>
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-9" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="IE=7" />
 
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      />
-      <!-- <link
+   <title>Ecotour</title>
+
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+   />
+   <!-- <link
       rel="icon"
       href="public/assets/favicon/favicon.ico"
       type="image/x-icon"
@@ -25,16 +47,15 @@
       rel="apple-touch-icon"
       href="public/assets/favicon/apple-touch-icon.png"
    /> -->
-      <!-- <script src="/src/scripts/main.js" defer=""></script> -->
+   <!-- <script src="/src/scripts/main.js" defer=""></script> -->
 
-      <meta property="og:title" content="Ecotour" />
-      <meta
-         property="og:description"
-         content="Discover with EcoTour Barahona, your specialist in Ecotourism a new face of the Dominican Republic, more human, more authentic!"
-      />
-      <meta property="og:image" content="" />
-      <meta property="og:url" content="" />
-   </head>
+   <meta property="og:title" content="Ecotour" />
+   <meta
+      property="og:description"
+      content="Discover with EcoTour Barahona, your specialist in Ecotourism a new face of the Dominican Republic, more human, more authentic!"
+   />
+   <meta property="og:image" content="" />
+   <meta property="og:url" content="" />
 
    <body>
       <main>
@@ -55,16 +76,28 @@
          <section id="trips">
             <div class="trips-container">
                <div class="trip-box">
-                  <img src="public/images/home/tips/1.png" alt="" />
+                  <Picture
+                     src={Trip_1}
+                     alt="Trip icon"
+                     formats={["avif", "webp"]}
+                  />
                   <p>Day-Trips</p>
                </div>
                <div class="trip-box">
-                  <img src="public/images/home/tips/2.png" alt="" />
+                  <Picture
+                     src={Trip_2}
+                     alt="Trip icon"
+                     formats={["avif", "webp"]}
+                  />
                   <p>Multi-day Trips</p>
                </div>
 
                <div class="trip-box">
-                  <img src="public/images/home/tips/3.png" alt="" />
+                  <Picture
+                     src={Trip_3}
+                     alt="Trip icon"
+                     formats={["avif", "webp"]}
+                  />
                   <p>Private tours</p>
                </div>
             </div>
@@ -95,9 +128,9 @@
                <div class="about-video">
                   <div class="about-video-wrapper">
                      <video
-                        src="public/videos/about.mp4"
+                        src="/videos/about.mp4"
                         id="about-video"
-                        poster="public/images/home/about-cover.png"
+                        poster="/images/home/about-cover.png"
                         muted></video>
                      <div class="video-controls-wrapper">
                         <div class="video-controls">
@@ -118,21 +151,33 @@
             <div class="experiences-container">
                <div class="row">
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/1.jpg" alt="" />
+                     <Picture
+                        src={Experience_1}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$55</span>
                      </div>
                   </div>
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/2.jpg" alt="" />
+                     <Picture
+                        src={Experience_2}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$60</span>
                      </div>
                   </div>
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/3.jpg" alt="" />
+                     <Picture
+                        src={Experience_3}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$99</span>
@@ -141,14 +186,22 @@
                </div>
                <div class="row">
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/4.jpg" alt="" />
+                     <Picture
+                        src={Experience_4}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$99</span>
                      </div>
                   </div>
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/5.jpg" alt="" />
+                     <Picture
+                        src={Experience_5}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$105</span>
@@ -157,21 +210,33 @@
                </div>
                <div class="row">
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/6.jpg" alt="" />
+                     <Picture
+                        src={Experience_6}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$105</span>
                      </div>
                   </div>
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/7.jpg" alt="" />
+                     <Picture
+                        src={Experience_7}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$119</span>
                      </div>
                   </div>
                   <div class="experience-card">
-                     <img src="public/images/home/experiences/8.jpg" alt="" />
+                     <Picture
+                        src={Experience_8}
+                        alt="Experience photo"
+                        formats={["avif", "webp"]}
+                     />
                      <div class="content">
                         <p>Garden of Eden</p>
                         <span>$295</span>
@@ -189,14 +254,22 @@
 
             <div class="features-container">
                <div class="feature-card">
-                  <img src="public/images/home/features/1.png" alt="" />
+                  <Picture
+                     src={Feature_1}
+                     alt="Feature icon"
+                     formats={["avif", "webp"]}
+                  />
                   <p>
                      Our day trips not only allow you to visit the Southwest,
                      but also to experience it.
                   </p>
                </div>
                <div class="feature-card">
-                  <img src="public/images/home/features/2.png" alt="" />
+                  <Picture
+                     src={Feature_2}
+                     alt="Feature icon"
+                     formats={["avif", "webp"]}
+                  />
                   <p>
                      There are guided by professional and passionate Dominicans
                      and show you the best and unexpected sides of the Dominican
@@ -204,7 +277,11 @@
                   </p>
                </div>
                <div class="feature-card">
-                  <img src="public/images/home/features/3.png" alt="" />
+                  <Picture
+                     src={Feature_3}
+                     alt="Feature icon"
+                     formats={["avif", "webp"]}
+                  />
                   <p>
                      Benefit from small group sizes and guaranteed weekly
                      departures.
@@ -223,7 +300,11 @@
                   </button>
                </div>
                <div class="row opinion">
-                  <img src="public/images/home/profile.png" alt="" />
+                  <Picture
+                     src={Profile}
+                     alt="Trip icon"
+                     formats={["avif", "webp"]}
+                  />
                   <div class="content">
                      <p class="name">Alberto Johnson</p>
                      <p class="title">
@@ -243,7 +324,7 @@
 
             <div class="book-container">
                <div class="title">
-                  <img src="public/images/home/calendar.png" alt="" />
+                  <!-- <img src="/images/home/calendar.png" alt="" /> -->
                   <div class="section-title">
                      <h2>Book Now</h2>
                      <h2>Lorem ipsum dolor sit</h2>
@@ -258,13 +339,13 @@
       <footer>
          <div class="footer-wrapper">
             <div class="col general">
-               <img src="public/images/logo/full-light.png" alt="" />
+               <img src="/images/logo/full-light.png" alt="" />
                <p>
                   Ecotour Barahona is your favourite specialist for authentic,
                   unique and memorable round trips, day trips and activities in
                   the Southwest of the Dominican Republic.
                </p>
-               <img src="public/images/logo/dr-has-it-all.png" alt="" />
+               <img src="/images/logo/dr-has-it-all.png" alt="" />
                Travel environmentally friendly with us and discover the main destinations
                of the Dominican Republic.
             </div>
