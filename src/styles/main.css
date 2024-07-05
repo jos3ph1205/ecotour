@@ -3,36 +3,45 @@ FONTS
 -------------------------------------------------- */
 @font-face {
    font-family: "AbhayaLibre";
-   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Regular.ttf")
-      format("truetype");
+   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Bold.woff2")
+         format("woff2"),
+      url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Regular.ttf")
+         format("truetype");
    font-weight: 500;
    font-style: normal;
 }
 @font-face {
    font-family: "AbhayaLibre";
-   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Medium.ttf")
-      format("truetype");
+   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Medium.woff2")
+         format("woff"),
+      url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Medium.ttf")
+         format("truetype");
    font-weight: 600;
    font-style: normal;
 }
 @font-face {
    font-family: "AbhayaLibre";
-   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Bold.ttf")
-      format("truetype");
+   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Bold.woff2")
+         format("woff2"),
+      url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Bold.ttf")
+         format("truetype");
    font-weight: 700;
    font-style: normal;
 }
 @font-face {
    font-family: "AbhayaLibre";
-   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-ExtraBold.ttf")
-      format("truetype");
+   src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-ExtraBold.woff2")
+         format("woff2"),
+      url("/src/assets/fonts/abhaya-libre/AbhayaLibre-ExtraBold.ttf")
+         format("truetype");
    font-weight: 900;
    font-style: normal;
 }
 @font-face {
    font-family: "OpenSans";
-   src: url("/src/assets/fonts/OpenSans-VariableFont_wght.ttf")
-      format("truetype");
+   src: url("/src/assets/fonts/OpenSans-VariableFont_wght.woff2")
+         format("woff2"),
+      url("/src/assets/fonts/OpenSans-VariableFont_wght.ttf") format("truetype");
 }
 
 /* --------------------------------------------------

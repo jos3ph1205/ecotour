@@ -6,6 +6,7 @@ section#home {
    --bg-url: url("/images/home/home.jpg");
    --bg-repeat: repeat;
    --bg-size: cover;
+   --bg-filter: brightness(0.7);
    min-height: 100svh;
    justify-content: center;
    align-items: flex-start;
