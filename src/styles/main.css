@@ -1,7 +1,7 @@
 /* --------------------------------------------------
 FONTS
 -------------------------------------------------- */
-@font-face {
+/* @font-face {
    font-family: "AbhayaLibre";
    src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Bold.woff2")
          format("woff2"),
@@ -18,7 +18,7 @@ FONTS
          format("truetype");
    font-weight: 600;
    font-style: normal;
-}
+} */
 @font-face {
    font-family: "AbhayaLibre";
    src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-Bold.woff2")
@@ -28,7 +28,7 @@ FONTS
    font-weight: 700;
    font-style: normal;
 }
-@font-face {
+/* @font-face {
    font-family: "AbhayaLibre";
    src: url("/src/assets/fonts/abhaya-libre/AbhayaLibre-ExtraBold.woff2")
          format("woff2"),
@@ -36,7 +36,7 @@ FONTS
          format("truetype");
    font-weight: 900;
    font-style: normal;
-}
+} */
 @font-face {
    font-family: "OpenSans";
    src: url("/src/assets/fonts/OpenSans-VariableFont_wght.woff2")
@@ -97,6 +97,11 @@ ROOT
    --clr-f-500: hsl(0, 0%, 50%);
    --clr-f-700: hsl(0, 0%, 28%);
    --clr-f-900: hsl(0, 0%, 13%);
+
+   --bp-mobile: 435px;
+   --bp-tablet: 650px;
+   --bp-laptop: 920px;
+   --bp-desktop: 1050px;
 }
 
 /* --------------------------------------------------

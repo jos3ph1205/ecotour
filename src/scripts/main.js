@@ -13,9 +13,11 @@ function removeRipple(ripple, container) {
 
 buttons.forEach((btn) => {
    let btnRipple = btn.appendChild(document.createElement("div"));
+
    btnRipple.classList.add("btn-ripple");
 
    btn.onmousedown = (e) => {
+      let rippleCount = btnRipple.children.length;
       let mousedown = 0;
 
       function mouseup(btn) {
@@ -52,12 +54,23 @@ buttons.forEach((btn) => {
          }
          // console.log(mousedown);
       };
+
       window.oncontextmenu = () => {
          if (mousedown > 0) {
             mousedown = 0;
          }
          // console.log(mousedown);
+         console.log(rippleCount)
+         if (rippleCount > 1) {
+            (async function mouseState() {
+               await mouseup(btn);
+
+               removeRipple(btnRipple.children[0], btnRipple);
+               // console.log(mousedown);
+            })();
+         }
       };
+
 
       ripple.onanimationend = () => {
          if (mousedown > 0) {

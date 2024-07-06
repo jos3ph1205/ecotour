@@ -1,0 +1,71 @@
+---
+import Head from "../layouts/CommonHead.astro";
+---
+
+<!doctype html>
+<html lang="en">
+   <Head>
+      <slot slot="scripts" name="scripts" />
+   </Head>
+
+   <body>
+      <main>
+			<slot />
+		</main>
+
+      <footer>
+         <div class="footer-wrapper">
+            <div class="col general">
+               <img src="/images/logo/full-light.png" alt="" />
+               <p>
+                  Ecotour Barahona is your favourite specialist for authentic,
+                  unique and memorable round trips, day trips and activities in
+                  the Southwest of the Dominican Republic.
+               </p>
+               <img src="/images/logo/dr-has-it-all.png" alt="" />
+               Travel environmentally friendly with us and discover the main destinations
+               of the Dominican Republic.
+            </div>
+            <div class="col about-us">
+               <div class="title">About Us</div>
+               <p class="link">About Ecotour</p>
+               <p class="link">Barahona</p>
+               <p class="link">Our team</p>
+               <p class="link">Guestbook</p>
+               <p class="link">Imprint</p>
+            </div>
+            <div class="col custormer-service">
+               <div class="title">About Us</div>
+               <p class="link">About Ecotour</p>
+               <p class="link">Barahona</p>
+               <p class="link">Our team</p>
+               <p class="link">Guestbook</p>
+               <p class="link">Imprint</p>
+            </div>
+            <div class="col reservations">
+               <div class="title">Reservations & Bookings</div>
+               <div class="link">
+                  <p>Monday to Friday</p>
+                  <span>From 8:00 am to 8:00 pm</span>
+               </div>
+               <div class="link">
+                  <p>Monday to Friday</p>
+                  <span>From 9:00 am to 5:00 pm</span>
+               </div>
+               <div class="link">
+                  <p>Atlantic Standard Time</p>
+                  <span><i></i> +1 (809) 856 2260</span>
+               </div>
+            </div>
+            <div class="col socials">
+               <div class="title">Follow Us</div>
+               <div class="socials-container">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-x-twitter"></i>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>

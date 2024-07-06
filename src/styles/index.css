@@ -327,10 +327,10 @@ OPINIONS SECTION
    Picture {
       width: 110px;
       aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      box-shadow: 0 12px 0 -2px hsla(0, 0%, 0%, 0.15);
 
       img {
+         border-radius: 50%;
+         box-shadow: 0 12px 0 -2px hsla(0, 0%, 0%, 0.15);
          height: 100%;
          width: 100%;
       }
