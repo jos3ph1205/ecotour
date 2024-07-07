@@ -401,6 +401,10 @@ footer {
    img {
       width: 100%;
    }
+
+   box-icon {
+      color: var(--clr-f-100);
+   }
 }
 
 .footer-wrapper .col.general {

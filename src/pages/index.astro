@@ -26,6 +26,7 @@ import Profile from "../assets/images/home/profile.png";
 
 import HomeBG from "../assets/images/home/home.jpg";
 import AboutBG from "../assets/images/home/about.jpg";
+import AboutCoverImg from "../assets/images/home/about-cover.png";
 
 const homeBackground = await getImage({
    src: HomeBG,
@@ -33,6 +34,10 @@ const homeBackground = await getImage({
 });
 const aboutBackground = await getImage({
    src: AboutBG,
+   format: "avif",
+});
+const aboutCover = await getImage({
+   src: AboutCoverImg,
    format: "avif",
 });
 ---
@@ -111,7 +116,7 @@ const aboutBackground = await getImage({
                <video
                   src="/videos/about.mp4"
                   id="about-video"
-                  poster="/images/home/about-cover.png"
+                  poster=`${aboutCover.src}`
                   muted></video>
                <div class="video-controls-wrapper">
                   <div class="video-controls">

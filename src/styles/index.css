@@ -153,6 +153,7 @@ section#about {
 
    /* border: solid 1px red; */
    font-size: 2.5em;
+   size: 100px;
    color: hsla(0, 0%, 90%, 0.9);
    border-radius: 50%;
    opacity: 0;

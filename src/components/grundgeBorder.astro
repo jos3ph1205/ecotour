@@ -21,7 +21,6 @@ const { grunge, id } = Astro.props;
    const data = gb.getAttribute("data-grunge").split(" ");
 
    data.forEach((val) => {
-      console.log(val);
       let img = "";
       if (val == "top") {
          img = grungeBdTopImg.src;
