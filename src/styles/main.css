@@ -195,6 +195,8 @@ section::before {
 }
 
 .grunge-border {
+   --gb-url-top: ;
+   --gb-url-btm: ;
    --shadow: drop-shadow(0 0px 12px hsla(0, 0%, 0%, 0.22));
 
    /* FILTER COLORS --> */
@@ -320,7 +322,7 @@ section::before {
    background-color: color-mix(in srgb, var(--clr-green-ltr), white 40%);
 }
 
-@keyframes parallaxY {
+/* @keyframes parallaxY {
    from {
       transform: translateY(calc(var(--parallax-offset) * -100px));
    }
@@ -335,13 +337,14 @@ section::before {
    animation: parallaxY linear;
    animation-timeline: view();
    animation-range: entry cover;
-}
+} */
 
 /* --------------------------------------------------
 BOOK SECTION
 -------------------------------------------------- */
 section#book {
    background-color: var(--clr-green);
+   padding-block: 5rem;
 
    .grunge-border {
       --filter-top: var(--gb-green-dkr);
@@ -382,11 +385,12 @@ footer {
    background-color: var(--clr-green-dkr);
 }
 .footer-wrapper {
+   width: 100%;
    font-size: 1rem;
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
    text-align: justify;
-   gap: 2em;
+   gap: 3em;
    color: color-mix(in srgb, var(--clr-f-100), var(--clr-f-300) 40%);
 
    .col {

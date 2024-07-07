@@ -89,11 +89,3 @@ buttons.forEach((btn) => {
       };
    };
 });
-
-let elem = document.querySelector('.elem');
-
-function disableRightClick(e) {
-   e.preventDefault();
-}
-
-elem.addEventListener("contextmenu", disableRightClick);

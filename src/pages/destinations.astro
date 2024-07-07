@@ -1,0 +1,237 @@
+---
+import "../styles/destinations.css";
+import Main from "../layouts/MainLayout.astro";
+import { Picture, getImage } from "astro:assets";
+import Grunge from "../components/grundgeBorder.astro";
+
+import Destination_1 from "../assets/images/destinations/destination-1.jpg";
+import Destination_2 from "../assets/images/destinations/destination-2.jpg";
+import Destination_3 from "../assets/images/destinations/destination-3.jpg";
+
+import Map from "../assets/images/destinations/map.png";
+import GuideImage from "../assets/images/destinations/guide-image.jpg";
+
+import HomeBG from "../assets/images/destinations/home.jpg";
+
+const homeBackground = await getImage({
+   src: HomeBG,
+   format: "webp",
+});
+---
+
+<Main>
+   <section
+      id="destinations-home"
+      style=`--bg-url: url(${homeBackground.src});`
+   >
+      <Grunge grunge="btm" id="home" />
+
+      <div class="page-title">
+         <h2>ONE ISLAND - TWO FACES</h2>
+         <h1>Hispaniola</h1>
+      </div>
+   </section>
+
+   <section id="destinations-about">
+      <div class="about-container">
+         <div class="section-title">
+            <h2>Caribbean Paradise</h2>
+         </div>
+         <br />
+         <p>
+            Hispaniola is the 22nd-largest island in the world, located in the
+            Caribbean island group, the Greater Antilles. It is the second
+            largest island in the Caribbean after Cuba, and the tenth most
+            populous island in the world.
+         </p>
+         <br />
+         <p>
+            Hispaniola is the site of the first permanent European settlement in
+            the Americas, founded by Christopher Columbus on his voyages in 1492
+            and 1493.
+         </p>
+      </div>
+   </section>
+
+   <section id="destination-images">
+      <div class="destinations-container">
+         <div>
+            <Picture
+               src={Destination_1}
+               alt="Photo of ecotour destination"
+               formats={["webp"]}
+               loading="eager"
+            />
+         </div>
+         <div>
+            <Picture
+               src={Destination_2}
+               alt="Photo of ecotour destination"
+               formats={["webp"]}
+               loading="eager"
+            />
+         </div>
+         <div>
+            <Picture
+               src={Destination_3}
+               alt="Photo of ecotour destination"
+               formats={["webp"]}
+               loading="eager"
+            />
+         </div>
+      </div>
+   </section>
+
+   <section id="geography">
+      <div class="geography-container">
+         <div class="col">
+            <div class="section-title">
+               <h2>Geography</h2>
+            </div>
+            <p>
+               Hispaniola is the second largest island of the West Indies, with
+               an area of about 76,126 km². The name given to the island was
+               Columbus. Hispaniola means "small Spain". The Tainos called the
+               island "Quisqueya", Mother Earth.
+            </p>
+            <p>
+               From a geological point of view, the island of Hispaniola is part
+               of two branches of the North American cordillera system and is
+               about 660 km long, 250 km wide and extends west-easterly. In the
+               west, the island of Hispaniola is separated by the approximately
+               90 km wide Windward Passage from Cuba and in the east by the Mona
+               Passage from Puerto Rico, which is up to 110 km wide.
+            </p>
+            <p>
+               On the island of Hispaniola lie five large mountain chains. The
+               highest mountains of the Caribbean are in the Dominican Republic.
+               The highest mountain is in Pico Duarte with 3098 meters above sea
+               level. Also the deepest point of the Caribbean lies on
+               Hispaniola: the salt lake Enriquillo in the southwest of the
+               Dominican Republic.
+            </p>
+            <p>
+               Hispaniola offers four vegetation zones and five climatic zones.
+               More than 5000 plant species, many of the endemic, make the
+               island a paradise for nature lovers. The animal world is also
+               convincing, although it is not possible to affect large animals
+               except for a few species. For this, the bird world is represented
+               even more arsenically.
+            </p>
+         </div>
+         <div class="col">
+            <Picture
+               src={Map}
+               alt="Photo of ecotour destination"
+               formats={["webp"]}
+               loading="eager"
+            />
+            <div class="geography-fact">
+               The island of Hispaniola is divided into two countries Dominican
+               Republic and Haiti. ⅔ the island belongs to the territory of the
+               Dominican Republic and ⅓ Haiti. Although both countries are on an
+               island, the landscape, cultural and social differences are huge.
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="quote">
+      <div class="grunge-border btm top"></div>
+
+      <div class="quote-container">
+         The varied climate, geography, as well as plants and fauna found in the
+         country should not only attract you to visit but invite you to
+         explore...
+      </div>
+   </section>
+
+   <section id="history">
+      <div class="history-container">
+         <div class="col">
+            <div class="section-title">
+               <h2>History</h2>
+            </div>
+            <p>
+               The island of Hispaniola (La Isla Espanola) was the first colony
+               in the New World settled by Spain.
+            </p>
+            <p>
+               As such, it served as a logistical base for the conquest of most
+               of the Western Hemisphere. Christopher Columbus first sighted the
+               island in 1492 toward the end of his first voyage to "the
+               Indies".
+            </p>
+         </div>
+         <div class="col">
+            <p>
+               For two centuries the Spanish ruled the island until western
+               Hispaniola (present-day Haiti) came under French control in 1697.
+               The ease still remained under Spanish control. This created a
+               division that still exists today, with the Dominican Republic and
+               Haiti sharing the island.
+            </p>
+            <p>
+               Finally, and after the decades of unstable political situations,
+               on 27 February 1844, the territory of Santo Domingo recovered its
+               sovereignty and declared its independence as the Dominican
+               Republic.
+            </p>
+         </div>
+      </div>
+   </section>
+
+   <section id="guide">
+      <div class="grunge-border top"></div>
+
+      <div class="guide-container">
+         <div class="guide-content">
+            <div class="section-title">
+               <h2>What to see and what to do!</h2>
+            </div>
+            <p>
+               Wild mountain streams, hidden caves and dreamy waterfalls can be
+               visited on guided tours in the mountains. Walks through tropical
+               mountain forests, biking at the beaches and safaris for bird and
+               bird watching are just a few of the recommendations that we can
+               give you.
+            </p>
+            <p>
+               Discover the original southwest of the Dominican Republic and
+               Haiti with Ecotour Barahona.
+            </p>
+            <button class="btn">
+               <span>Show all our tours</span>
+               <div class="btn-ripple"></div>
+            </button>
+         </div>
+
+         <div class="guide-image">
+            <Picture
+               src={GuideImage}
+               alt="Photo of ecotour destination"
+               formats={["webp"]}
+               loading="eager"
+            />
+         </div>
+      </div>
+   </section>
+
+   <section id="book">
+      <div class="grunge-border btm"></div>
+
+      <div class="book-container">
+         <div class="title">
+            <!-- <img src="../public/images/destinations/calendar.png" alt="" /> -->
+            <div class="section-title">
+               <h2>Book Now</h2>
+               <h2>Lorem ipsum dolor sit</h2>
+            </div>
+         </div>
+         <button class="btn invert">
+            <span>Check the dates</span>
+            <div class="btn-ripple"></div>
+         </button>
+      </div>
+   </section>
+</Main>
