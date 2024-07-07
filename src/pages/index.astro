@@ -2,7 +2,8 @@
 import "../styles/index.css";
 import Main from "../layouts/MainLayout.astro";
 
-import { Image, Picture } from "astro:assets";
+import { Picture, getImage } from "astro:assets";
+import Grunge from "../components/grundgeBorder.astro";
 
 import Trip_1 from "../assets/images/home/trips/1.png";
 import Trip_2 from "../assets/images/home/trips/2.png";
@@ -22,13 +23,24 @@ import Feature_2 from "../assets/images/home/features/2.png";
 import Feature_3 from "../assets/images/home/features/3.png";
 
 import Profile from "../assets/images/home/profile.png";
+
+import HomeBG from "../assets/images/home/home.jpg";
+import AboutBG from "../assets/images/home/about.jpg";
+
+const homeBackground = await getImage({
+   src: HomeBG,
+   format: "avif",
+});
+const aboutBackground = await getImage({
+   src: AboutBG,
+   format: "avif",
+});
 ---
 
 <Main>
-   
-   <section id="home">
-      <div class="grunge-border btm"></div>
-      
+   <section id="home" style=`--bg-url: url(${homeBackground.src});`>
+      <Grunge grunge="btm" id="home" />
+
       <div class="page-title">
          <h2>Discover a hidden Paradise</h2>
          <h1>
@@ -44,37 +56,37 @@ import Profile from "../assets/images/home/profile.png";
       <div class="trips-container">
          <div class="trip-box">
             <Picture
-            src={Trip_1}
-            alt="Trip icon"
-            formats={["webp"]}
-            loading="eager"
+               src={Trip_1}
+               alt="Trip icon"
+               formats={["webp"]}
+               loading="eager"
             />
             <p>Day-Trips</p>
          </div>
          <div class="trip-box">
             <Picture
-            src={Trip_2}
-            alt="Trip icon"
-            formats={["webp"]}
-            loading="eager"
+               src={Trip_2}
+               alt="Trip icon"
+               formats={["webp"]}
+               loading="eager"
             />
             <p>Multi-day Trips</p>
          </div>
-         
+
          <div class="trip-box">
             <Picture
-            src={Trip_3}
-            alt="Trip icon"
-            formats={["webp"]}
-            loading="eager"
+               src={Trip_3}
+               alt="Trip icon"
+               formats={["webp"]}
+               loading="eager"
             />
             <p>Private tours</p>
          </div>
       </div>
    </section>
-   <section id="about">
-      <div class="grunge-border btm top"></div>
-      
+   <section id="about" style=`--bg-url: url(${aboutBackground.src});`>
+      <Grunge grunge="btm top" id="about" />
+
       <div class="about-container">
          <div class="about-content">
             <div class="section-title">
@@ -93,7 +105,7 @@ import Profile from "../assets/images/home/profile.png";
                <span>Know More</span>
             </button>
          </div>
-         
+
          <div class="about-video">
             <div class="about-video-wrapper">
                <video
@@ -101,12 +113,12 @@ import Profile from "../assets/images/home/profile.png";
                   id="about-video"
                   poster="/images/home/about-cover.png"
                   muted></video>
-                  <div class="video-controls-wrapper">
-                     <div class="video-controls">
-                        <div class="play-btn-wrapper">
-                           <i class="fa-solid fa-pause fa-play play-btn"></i>
-                        </div>
+               <div class="video-controls-wrapper">
+                  <div class="video-controls">
+                     <div class="play-btn-wrapper">
+                        <i class="fa-solid fa-pause fa-play play-btn"></i>
                      </div>
+                  </div>
                </div>
             </div>
          </div>
@@ -116,15 +128,15 @@ import Profile from "../assets/images/home/profile.png";
       <div class="section-title">
          <h2>Featured Travel Experiences</h2>
       </div>
-      
+
       <div class="experiences-container">
          <div class="row">
             <div class="experience-card">
                <Picture
-               src={Experience_1}
-               alt="Experience location"
-               formats={["webp"]}
-               loading="eager"
+                  src={Experience_1}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
                />
                <div class="content">
                   <p>Garden of Eden</p>
@@ -133,10 +145,10 @@ import Profile from "../assets/images/home/profile.png";
             </div>
             <div class="experience-card">
                <Picture
-               src={Experience_2}
-               alt="Experience location"
-               formats={["webp"]}
-               loading="eager"
+                  src={Experience_2}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
                />
                <div class="content">
                   <p>Garden of Eden</p>
@@ -145,78 +157,78 @@ import Profile from "../assets/images/home/profile.png";
             </div>
             <div class="experience-card">
                <Picture
-               src={Experience_3}
-               alt="Experience location"
-               formats={["webp"]}
-               loading="eager"
-               />
-               <div class="content">
-                  <p>Garden of Eden</p>
-                  <span>$99</span>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="experience-card">
-               <Picture
-               src={Experience_4}
-               alt="Experience location"
-               formats={["webp"]}
-               loading="eager"
-               />
-               <div class="content">
-                  <p>Garden of Eden</p>
-                  <span>$99</span>
-               </div>
-            </div>
-            <div class="experience-card">
-               <Picture
-               src={Experience_5}
-               alt="Experience location"
-               formats={["webp"]}
-               loading="eager"
-               />
-               <div class="content">
-                  <p>Garden of Eden</p>
-                  <span>$105</span>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="experience-card">
-               <Picture
-               src={Experience_6}
-               alt="Experience location"
-               formats={["webp"]}
-               loading="eager"
-               />
-               <div class="content">
-                  <p>Garden of Eden</p>
-                  <span>$105</span>
-               </div>
-            </div>
-            <div class="experience-card">
-               <Picture
-               src={Experience_7}
+                  src={Experience_3}
                   alt="Experience location"
                   formats={["webp"]}
                   loading="eager"
-                  />
-                  <div class="content">
-                     <p>Garden of Eden</p>
-                     <span>$119</span>
-                  </div>
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$99</span>
                </div>
-               <div class="experience-card">
-                  <Picture
+            </div>
+         </div>
+         <div class="row">
+            <div class="experience-card">
+               <Picture
+                  src={Experience_4}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$99</span>
+               </div>
+            </div>
+            <div class="experience-card">
+               <Picture
+                  src={Experience_5}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$105</span>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="experience-card">
+               <Picture
+                  src={Experience_6}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$105</span>
+               </div>
+            </div>
+            <div class="experience-card">
+               <Picture
+                  src={Experience_7}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$119</span>
+               </div>
+            </div>
+            <div class="experience-card">
+               <Picture
                   src={Experience_8}
                   alt="Experience location"
                   formats={["webp"]}
                   loading="eager"
-                  />
-                  <div class="content">
-                     <p>Garden of Eden</p>
-                     <span>$295</span>
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$295</span>
                </div>
             </div>
          </div>
@@ -226,9 +238,9 @@ import Profile from "../assets/images/home/profile.png";
       <div class="section-title">
          <h2>Why book with EcoTour Barahona?</h2>
       </div>
-      
-      <div class="grunge-border btm top"></div>
-      
+
+      <Grunge grunge="btm top" id="home" />
+
       <div class="features-container">
          <div class="feature-card">
             <Picture
@@ -236,7 +248,7 @@ import Profile from "../assets/images/home/profile.png";
                alt="Feature icon"
                formats={["webp"]}
                loading="eager"
-               />
+            />
             <p>
                Our day trips not only allow you to visit the Southwest, but also
                to experience it.
@@ -244,10 +256,10 @@ import Profile from "../assets/images/home/profile.png";
          </div>
          <div class="feature-card">
             <Picture
-            src={Feature_2}
-            alt="Feature icon"
-            formats={["webp"]}
-            loading="eager"
+               src={Feature_2}
+               alt="Feature icon"
+               formats={["webp"]}
+               loading="eager"
             />
             <p>
                There are guided by professional and passionate Dominicans and
@@ -256,10 +268,10 @@ import Profile from "../assets/images/home/profile.png";
          </div>
          <div class="feature-card">
             <Picture
-            src={Feature_3}
-            alt="Feature icon"
-            formats={["webp"]}
-            loading="eager"
+               src={Feature_3}
+               alt="Feature icon"
+               formats={["webp"]}
+               loading="eager"
             />
             <p>
                Benefit from small group sizes and guaranteed weekly departures.
@@ -279,12 +291,12 @@ import Profile from "../assets/images/home/profile.png";
          </div>
          <div class="row opinion">
             <Picture
-            src={Profile}
-            alt="Trip icon"
+               src={Profile}
+               alt="Trip icon"
                formats={["webp"]}
                loading="eager"
-               />
-               <div class="content">
+            />
+            <div class="content">
                <p class="name">Alberto Johnson</p>
                <p class="title">
                   Lorem ipsum dolor sit amet consectetur adipisicing
@@ -292,14 +304,14 @@ import Profile from "../assets/images/home/profile.png";
                <span
                   >Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Accusantium, dolores vitae officiis hic recusandae eos?</span
-                  >
-               </div>
+               >
+            </div>
          </div>
       </div>
    </section>
    <section id="book">
-      <div class="grunge-border btm"></div>
-      
+      <Grunge grunge="btm" id="home" />
+
       <div class="book-container">
          <div class="title">
             <!-- <img src="/images/home/calendar.png" alt="" /> -->
