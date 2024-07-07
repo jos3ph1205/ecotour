@@ -9,12 +9,27 @@ import Destination_2 from "../assets/images/destinations/destination-2.jpg";
 import Destination_3 from "../assets/images/destinations/destination-3.jpg";
 
 import Map from "../assets/images/destinations/map.png";
+import MapIcon from "../assets/images/destinations/map-icon.png";
 import GuideImage from "../assets/images/destinations/guide-image.jpg";
 
 import HomeBG from "../assets/images/destinations/home.jpg";
+import QuoteBG from "../assets/images/destinations/quote.jpg";
+import GuideBG from "../assets/images/destinations/guide.jpg";
 
 const homeBackground = await getImage({
    src: HomeBG,
+   format: "avif",
+});
+const quoteBackground = await getImage({
+   src: QuoteBG,
+   format: "avif",
+});
+const guideBackground = await getImage({
+   src: GuideBG,
+   format: "avif",
+});
+const mapIcon = await getImage({
+   src: MapIcon,
    format: "avif",
 });
 ---
@@ -126,7 +141,10 @@ const homeBackground = await getImage({
                formats={["avif", "webp"]}
                loading="eager"
             />
-            <div class="geography-fact">
+            <div
+               class="geography-fact"
+               style=`--map-icon: url(${mapIcon.src});`
+            >
                The island of Hispaniola is divided into two countries Dominican
                Republic and Haiti. ⅔ the island belongs to the territory of the
                Dominican Republic and ⅓ Haiti. Although both countries are on an
@@ -136,7 +154,7 @@ const homeBackground = await getImage({
       </div>
    </section>
 
-   <section id="quote">
+   <section id="quote" style=`--bg-url: url(${quoteBackground.src});`>
       <div class="grunge-border btm top"></div>
 
       <div class="quote-container">
@@ -181,7 +199,7 @@ const homeBackground = await getImage({
       </div>
    </section>
 
-   <section id="guide">
+   <section id="guide" style=`--bg-url: url(${guideBackground.src});`>
       <div class="grunge-border top"></div>
 
       <div class="guide-container">

@@ -101,7 +101,7 @@ section#geography {
       translate: -50% -50%;
       height: 7em;
       aspect-ratio: 1 / 1;
-      background-image: url("/images/destinations/map-icon.png");
+      background-image: var(--map-icon);
       background-size: contain;
       background-position: center;
       z-index: 1;
@@ -109,7 +109,6 @@ section#geography {
 }
 
 section#quote {
-   --bg-url: url("/images/destinations/quote.jpg");
    --bg-repeat: repeat;
    --bg-size: cover;
    --bg-filter: brightness(0.6);
@@ -147,7 +146,6 @@ section#quote {
 }
 
 section#guide {
-   --bg-url: url("/images/destinations/guide.jpg");
    --bg-repeat: repeat;
    --bg-size: cover;
    min-height: 90svh;
