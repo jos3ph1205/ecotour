@@ -3,7 +3,6 @@ HOME SECTION
 -------------------------------------------------- */
 section#home {
    color: white;
-   --bg-url: url("/images/home/home.jpg");
    --bg-repeat: repeat;
    --bg-size: cover;
    --bg-filter: brightness(0.7);
@@ -18,7 +17,7 @@ section#home {
          text-transform: uppercase;
       }
       h1 {
-         font-family: 'AbhayaLibre';
+         font-family: "AbhayaLibre";
          font-size: 3.5rem;
          font-weight: var(--f-bold);
       }
@@ -52,7 +51,6 @@ section#home {
 ABOUT SECTION
 -------------------------------------------------- */
 section#about {
-   --bg-url: url("/images/home/about.jpg");
    --bg-repeat: repeat;
    --bg-size: cover;
    min-height: 90svh;
@@ -256,7 +254,6 @@ FEATURED EXPERIENCES SECTION
 FEATURES SECTION
 -------------------------------------------------- */
 section#features {
-   --bg-url: url("/images/home/features.jpg");
    --bg-repeat: repeat;
    --bg-size: cover;
    min-height: 120svh;
