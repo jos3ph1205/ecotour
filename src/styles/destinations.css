@@ -33,6 +33,7 @@ section#destinations-home {
    .section-title {
       h2 {
          color: var(--clr-green-dkr);
+         text-align: center;
       }
    }
 }
@@ -74,7 +75,7 @@ section#geography {
       text-align: justify;
       width: 100%;
       gap: 2.5ch;
-      color: var(--clr-f-500);
+      color: var(--clr-f-700);
       font-weight: var(--f-light);
 
       Picture img {
@@ -86,7 +87,7 @@ section#geography {
 .geography-container .col:last-child {
    .geography-fact {
       position: relative;
-      font-size: 0.8rem;
+      font-size: .9em;
       line-height: 1.8ch;
       background-color: white;
       padding-block: 2em;
@@ -140,7 +141,7 @@ section#quote {
       text-align: justify;
       width: 100%;
       gap: 2.5ch;
-      color: var(--clr-f-500);
+      color: var(--clr-f-700);
       font-weight: var(--f-light);
    }
 }

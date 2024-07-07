@@ -5,11 +5,11 @@ import grungeBdBtm from "../assets/images/grunge/btm.png";
 
 const grungeBdTopImg = await getImage({
    src: grungeBdTop,
-   format: "webp",
+   format: "avif",
 });
 const grungeBdBtmImg = await getImage({
    src: grungeBdBtm,
-   format: "webp",
+   format: "avif",
 });
 
 const { grunge, id } = Astro.props;
@@ -17,21 +17,20 @@ const { grunge, id } = Astro.props;
 
 <div class="grunge-border" data-grunge={grunge} data-id={id}></div>
 <script define:vars={{ id, grungeBdTopImg, grungeBdBtmImg }}>
-   const grungeBorder = document.querySelector(`.grunge-border[data-id="${id}"]`);
-   const gbData = grungeBorder.getAttribute("data-grunge").split(" ");
-   const data = [`${gbData[0]}`, `${gbData[1]}`];
+   const gb = document.querySelector(`.grunge-border[data-id="${id}"]`);
+   const data = gb.getAttribute("data-grunge").split(" ");
 
    data.forEach((val) => {
-      console.log(val)
-      let img = '';
-      if (val == 'top') {
+      console.log(val);
+      let img = "";
+      if (val == "top") {
          img = grungeBdTopImg.src;
-      } else if (val == 'btm') {
+      } else if (val == "btm") {
          img = grungeBdBtmImg.src;
       }
 
-      grungeBorder.style.cssText = `--gb-url-${val}: url(${img});`
+      gb.style.cssText = `--gb-url-${val}: url(${img});`;
 
-      grungeBorder.classList.add(val);
+      gb.classList.add(val);
    });
 </script>
