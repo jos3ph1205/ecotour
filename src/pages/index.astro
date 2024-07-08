@@ -1,32 +1,33 @@
 ---
-import "../styles/index.css";
+import "/src/styles/index.css";
 import Main from "../layouts/MainLayout.astro";
 
 import { Picture, getImage } from "astro:assets";
 import Grunge from "../components/grundgeBorder.astro";
 
-import Trip_1 from "../assets/images/home/trips/1.png";
-import Trip_2 from "../assets/images/home/trips/2.png";
-import Trip_3 from "../assets/images/home/trips/3.png";
+import Trip_1 from "/src/assets/images/home/trips/1.png";
+import Trip_2 from "/src/assets/images/home/trips/2.png";
+import Trip_3 from "/src/assets/images/home/trips/3.png";
 
-import Experience_1 from "../assets/images/home/experiences/1.jpg";
-import Experience_2 from "../assets/images/home/experiences/2.jpg";
-import Experience_3 from "../assets/images/home/experiences/3.jpg";
-import Experience_4 from "../assets/images/home/experiences/4.jpg";
-import Experience_5 from "../assets/images/home/experiences/5.jpg";
-import Experience_6 from "../assets/images/home/experiences/6.jpg";
-import Experience_7 from "../assets/images/home/experiences/7.jpg";
-import Experience_8 from "../assets/images/home/experiences/8.jpg";
+import Experience_1 from "/src/assets/images/home/experiences/1.jpg";
+import Experience_2 from "/src/assets/images/home/experiences/2.jpg";
+import Experience_3 from "/src/assets/images/home/experiences/3.jpg";
+import Experience_4 from "/src/assets/images/home/experiences/4.jpg";
+import Experience_5 from "/src/assets/images/home/experiences/5.jpg";
+import Experience_6 from "/src/assets/images/home/experiences/6.jpg";
+import Experience_7 from "/src/assets/images/home/experiences/7.jpg";
+import Experience_8 from "/src/assets/images/home/experiences/8.jpg";
 
-import Feature_1 from "../assets/images/home/features/1.png";
-import Feature_2 from "../assets/images/home/features/2.png";
-import Feature_3 from "../assets/images/home/features/3.png";
+import Feature_1 from "/src/assets/images/home/features/1.png";
+import Feature_2 from "/src/assets/images/home/features/2.png";
+import Feature_3 from "/src/assets/images/home/features/3.png";
 
-import Profile from "../assets/images/home/profile.png";
+import Profile from "/src/assets/images/home/profile.png";
 
-import HomeBG from "../assets/images/home/home.jpg";
-import AboutBG from "../assets/images/home/about.jpg";
-import AboutCoverImg from "../assets/images/home/about-cover.png";
+import HomeBG from "/src/assets/images/home/home.jpg";
+import AboutBG from "/src/assets/images/home/about.jpg";
+import FeaturesBG from "/src/assets/images/home/features.jpg";
+import AboutCoverImg from "/src/assets/images/home/about-cover.png";
 
 const homeBackground = await getImage({
    src: HomeBG,
@@ -34,6 +35,10 @@ const homeBackground = await getImage({
 });
 const aboutBackground = await getImage({
    src: AboutBG,
+   format: "avif",
+});
+const featuresBackground = await getImage({
+   src: FeaturesBG,
    format: "avif",
 });
 const aboutCover = await getImage({
@@ -239,7 +244,7 @@ const aboutCover = await getImage({
          </div>
       </div>
    </section>
-   <section id="features">
+   <section id="features" style=`--bg-url: url(${featuresBackground.src});`>
       <div class="section-title">
          <h2>Why book with EcoTour Barahona?</h2>
       </div>
@@ -329,7 +334,6 @@ const aboutCover = await getImage({
             <span>Check the dates</span>
          </button>
       </div>
-      <p class="elem">elem</p>
    </section>
 
    <script src="/src/scripts/videoPlayer.js"></script>
