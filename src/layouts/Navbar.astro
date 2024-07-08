@@ -1,0 +1,43 @@
+---
+import { Picture } from "astro:assets";
+
+import Logo from "/src/assets/images/logo/full.png";
+
+const { active } = Astro.props;
+---
+
+<header>
+   <div class="segmant">
+      <nav>
+         <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/destinations/">Destinations</a></li>
+            <li class="tours">
+               Tours
+               <div class="dropdown">
+                  <ul>
+                     <li><a href="">Tours List</a></li>
+                     <li><a href="">Single Tours</a></li>
+                     <li><a href="/private-tours">Private Tours</a></li>
+                  </ul>
+               </div>
+            </li>
+         </ul>
+      </nav>
+   </div>
+   <div class="segmant">
+      <div class="logo">
+         <Picture
+            src={Logo}
+            alt="Ecotour Logo"
+            formats={["webp"]}
+            loading="eager"
+         />
+      </div>
+   </div>
+   <div class="segmant">
+      <button class="btn outline"
+         ><i class="fa-solid fa-phone"></i> Get in touch</button
+      >
+   </div>
+</header>

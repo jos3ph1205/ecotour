@@ -60,7 +60,7 @@ buttons.forEach((btn) => {
             mousedown = 0;
          }
          // console.log(mousedown);
-         console.log(rippleCount)
+         console.log(rippleCount);
          if (rippleCount > 1) {
             (async function mouseState() {
                await mouseup(btn);
@@ -70,7 +70,6 @@ buttons.forEach((btn) => {
             })();
          }
       };
-
 
       ripple.onanimationend = () => {
          if (mousedown > 0) {

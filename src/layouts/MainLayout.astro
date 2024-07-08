@@ -1,14 +1,18 @@
 ---
 import Head from "../layouts/CommonHead.astro";
+import Nav from "../layouts/Navbar.astro";
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-   <Head>
+   <Head {title}>
       <slot slot="scripts" name="scripts" />
    </Head>
 
    <body>
+      <Nav />
       <main>
          <slot />
       </main>

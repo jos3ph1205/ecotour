@@ -1,5 +1,7 @@
 ---
-import "/src/styles/main.css";
+import "/src/styles/global.css";
+
+const { title = "Ecotour" } = Astro.props;
 ---
 
 <head>
@@ -7,11 +9,12 @@ import "/src/styles/main.css";
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta
       name="description"
-      content="Ecotour barahona destinations and tour information."
+      content="Ecotour barahona destinations and tour list information."
    />
    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+   <meta name="Generator" content={Astro.generator} />
 
-   <title>Ecotour</title>
+   <title>{title}</title>
 
    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />

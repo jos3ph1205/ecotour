@@ -102,6 +102,8 @@ ROOT
    --bp-tablet: 650px;
    --bp-laptop: 920px;
    --bp-desktop: 1050px;
+   --padding-b: 8rem;
+   --padding-i: 8rem;
 }
 
 /* --------------------------------------------------
@@ -156,18 +158,18 @@ body {
    cursor: grabbing;
 }
 section,
-footer,
-header {
+footer {
    --bg-position: center;
    --bg-size: cover;
    --bg-repeat: no-repeat;
+
    position: relative;
    overflow: hidden;
    display: flex;
    flex-direction: column;
    align-items: center;
    gap: 3rem;
-   padding: 8rem;
+   padding: var(--padding-b) var(--padding-i);
 }
 section::before {
    content: "";
@@ -181,6 +183,9 @@ section::before {
    filter: var(--bg-filter);
    z-index: -2;
 }
+section:first-child {
+   padding-top: calc(var(--padding-b) + 80px);
+}
 .section-title {
    font-family: "AbhayaLibre";
    display: flex;
@@ -192,6 +197,137 @@ section::before {
    font-size: 3.5em;
    font-weight: 900;
    color: var(--clr-f-900);
+}
+
+header {
+   --padding-b: 1rem;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 10;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: var(--padding-b) var(--padding-i);
+   gap: 2ch;
+   height: 80px;
+   animation: nav-transition 0.5s linear forwards;
+   animation-timeline: scroll(y);
+   animation-range: 0 20svh;
+   color: var(--clr-f-100);
+   z-index: 10;
+
+   .segmant {
+      width: 100%;
+      height: 100%;
+   }
+
+   .segmant:nth-of-type(1) {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+   }
+   .segmant:nth-of-type(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .segmant:nth-of-type(3) {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+   }
+
+   nav {
+      & > ul {
+         display: flex;
+         gap: 3ch;
+         font-size: 1.2em;
+
+         font-weight: var(--f-light);
+         li {
+            position: relative;
+            list-style: none;
+            
+            a {
+               text-decoration: none;
+               color: inherit;
+            }
+
+            &::before {
+               content: '';
+               position: absolute;
+               bottom: -.2ch;
+               height: .2ch;
+               width: 0%;
+               left: 0%;
+               background-color: currentColor;
+               transition: .15s ease-out;
+            }
+
+            &:hover::before {
+               width: 100%;
+               transition: .5s cubic-bezier(.2,.9,0,1);
+            }
+         }
+
+         li.tours {
+            position: relative;
+
+            .dropdown {
+               --offset: 2.5ch;
+               width: max-content;
+               position: absolute;
+               padding-top: calc(1.5ch + var(--offset));
+               margin-top: calc(var(--offset) * -1);
+               visibility: hidden;
+               opacity: 0;
+
+               left: -0.75ch;
+               top: 7ch;
+               transition: 0.15s ease-out;
+
+               ul {
+                  color: var(--clr-f-700);
+                  background-color: color-mix(
+                     in srgb,
+                     var(--clr-base-lt),
+                     transparent 5%
+                  );
+                  display: flex;
+                  flex-direction: column;
+                  padding: 1.5ch;
+                  gap: 1rem;
+               }
+            }
+
+            &:hover {
+               .dropdown {
+                  top: calc(2ch + var(--offset));
+                  visibility: visible;
+                  opacity: 1;
+                  transition: .5s cubic-bezier(0,1,0,1);
+               }
+            }
+         }
+      }
+   }
+
+   .logo {
+      height: 100%;
+
+      img {
+         height: 100%;
+         width: auto;
+      }
+   }
+}
+@keyframes nav-transition {
+   100% {
+      background-color: var(--clr-base-lt);
+      color: var(--clr-f-700);
+   }
 }
 
 .grunge-border {
@@ -257,9 +393,12 @@ section::before {
 
 .btn {
    position: relative;
-   padding: 1.2em 2.2em;
+   padding: 1.1em 2.2em;
    font-size: 1em;
-   width: fit-content;
+   display: flex;
+   gap: 1ch;
+   width: max-content;
+
    border: none;
    background-color: var(--clr-green);
    color: var(--clr-f-100);
@@ -271,6 +410,7 @@ section::before {
    overflow: clip;
    cursor: pointer;
    z-index: 1;
+   white-space: nowrap;
 
    span {
       pointer-events: none;
