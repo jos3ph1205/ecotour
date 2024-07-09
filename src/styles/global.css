@@ -92,7 +92,7 @@ ROOT
    --f-bold: 1000;
 
    /* FONT COLOR */
-   --clr-f-100: hsl(0, 0%, 92%);
+   --clr-f-100: hsl(0, 0%, 96%);
    --clr-f-300: hsl(0, 0%, 72%);
    --clr-f-500: hsl(0, 0%, 50%);
    --clr-f-700: hsl(0, 0%, 28%);
@@ -118,8 +118,16 @@ BASE STYLING
    -webkit-tap-highlight-color: transparent;
 }
 *:focus-visible {
-   outline: solid 2px var(--clr-green-dk);
-   border-radius: 0.1em;
+   outline: solid 2px var(--clr-green-ltr);
+   outline-offset: 1px;
+   border-radius: 1pt;
+   animation: focus 0.03s ease-out forwards;
+}
+@keyframes focus {
+   100% {
+      outline-offset: 3px;
+      outline-color: var(--clr-green);
+   }
 }
 html {
    scroll-behavior: smooth;
@@ -249,26 +257,26 @@ header {
          li {
             position: relative;
             list-style: none;
-            
+
             a {
                text-decoration: none;
                color: inherit;
             }
 
             &::before {
-               content: '';
+               content: "";
                position: absolute;
-               bottom: -.2ch;
-               height: .2ch;
+               bottom: -0.2ch;
+               height: 0.2ch;
                width: 0%;
                left: 0%;
-               background-color: currentColor;
-               transition: .15s ease-out;
+               background-color: var(--clr-green);
+               transition: 0.15s ease-out;
             }
 
             &:hover::before {
                width: 100%;
-               transition: .5s cubic-bezier(.2,.9,0,1);
+               transition: 0.5s cubic-bezier(0.2, 0.9, 0, 1);
             }
          }
 
@@ -283,22 +291,31 @@ header {
                margin-top: calc(var(--offset) * -1);
                visibility: hidden;
                opacity: 0;
-
+               
                left: -0.75ch;
                top: 7ch;
                transition: 0.15s ease-out;
-
+               
                ul {
+                  position: relative;
+                  border: solid 1px color-mix(in srgb, var(--clr-f-100), var(--clr-f-300) 30%);
                   color: var(--clr-f-700);
-                  background-color: color-mix(
+                  /* background-color: color-mix(
                      in srgb,
                      var(--clr-base-lt),
                      transparent 5%
-                  );
+                  ); */
                   display: flex;
                   flex-direction: column;
                   padding: 1.5ch;
                   gap: 1rem;
+
+                  &::before {
+                     position: absolute;
+                     inset: 0;
+                     background-color: hs;
+                     filter: blur(10px);
+                  }
                }
             }
 
@@ -307,7 +324,7 @@ header {
                   top: calc(2ch + var(--offset));
                   visibility: visible;
                   opacity: 1;
-                  transition: .5s cubic-bezier(0,1,0,1);
+                  transition: 0.5s cubic-bezier(0, 1, 0, 1);
                }
             }
          }
@@ -440,12 +457,7 @@ header {
    aspect-ratio: 1 / 1;
    border-radius: 50%;
    z-index: -1;
-}
-.btn-ripple .ripple.dwn {
-   animation: btn-ripple-dwn 0.3s ease-out forwards;
-}
-.btn-ripple .ripple.up {
-   animation: btn-ripple-up 0.2s ease-out forwards;
+   animation: ripple 0.6s ease-out forwards;
 }
 
 .btn.invert .btn-ripple .ripple {
@@ -462,22 +474,18 @@ header {
    background-color: color-mix(in srgb, var(--clr-green-ltr), white 40%);
 }
 
-/* @keyframes parallaxY {
-   from {
-      transform: translateY(calc(var(--parallax-offset) * -100px));
+@keyframes ripple {
+   0% {
+      width: 0px;
+      height: 0px;
+      opacity: 0.5;
    }
-   to {
-      transform: translateY(calc(var(--parallax-offset) * 100px));
+   100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
    }
 }
-.parallax::before {
-   --parallax-offset: 5;
-   height: 100%;
-
-   animation: parallaxY linear;
-   animation-timeline: view();
-   animation-range: entry cover;
-} */
 
 /* --------------------------------------------------
 BOOK SECTION
