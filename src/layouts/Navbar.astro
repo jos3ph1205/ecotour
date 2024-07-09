@@ -13,7 +13,7 @@ const { active } = Astro.props;
             <li><a href="/">Home</a></li>
             <li><a href="/destinations/">Destinations</a></li>
             <li class="tours">
-               Tours
+               Tours <i class="fa-solid fa-chevron-down"></i>
                <div class="dropdown">
                   <ul>
                      <li><a href="/tours-list">Tours List</a></li>
@@ -41,3 +41,160 @@ const { active } = Astro.props;
       >
    </div>
 </header>
+<style is:global>
+   @keyframes nav-transition {
+      100% {
+         background-color: var(--clr-base-lt);
+         color: var(--clr-f-700);
+      }
+   }
+   header {
+      --padding-b: 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--padding-b) var(--padding-i);
+      gap: 2ch;
+      height: 80px;
+      animation: nav-transition 0.5s linear forwards;
+      animation-timeline: scroll(y);
+      animation-range: 0 20svh;
+      color: var(--clr-f-100);
+      z-index: 10;
+
+      .segmant {
+         width: 100%;
+         height: 100%;
+      }
+
+      .segmant:nth-of-type(1) {
+         display: flex;
+         align-items: center;
+         justify-content: left;
+      }
+      .segmant:nth-of-type(2) {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      .segmant:nth-of-type(3) {
+         display: flex;
+         align-items: center;
+         justify-content: right;
+      }
+
+      nav {
+         & > ul {
+            display: flex;
+            gap: 3ch;
+            font-size: 1.2em;
+
+            font-weight: var(--f-light);
+            li {
+               list-style: none;
+               
+               a {
+                  position: relative;
+                  text-decoration: none;
+                  color: inherit;
+
+                  &::before {
+                     content: "";
+                     position: absolute;
+                     bottom: -3px;
+                     height: 2px;
+                     width: 0%;
+                     left: 0%;
+                     background-color: var(--clr-green);
+                     transition: 0.15s ease-out;
+                  }
+   
+                  &:hover::before {
+                     width: 100%;
+                     transition: 0.5s cubic-bezier(0.2, 0.9, 0, 1);
+                  }
+               }
+
+            }
+
+            li.tours {
+               position: relative;
+               display: flex;
+               align-items: center;
+               gap: 0.5ch;
+
+               & > i {
+                  font-size: 0.5em;
+                  color: var(--clr-f-300);
+               }
+
+               .dropdown {
+                  --offset: 2.5ch;
+                  position: absolute;
+                  padding-top: calc(1.5ch + var(--offset));
+                  margin-top: calc(var(--offset) * -1);
+                  visibility: hidden;
+                  opacity: 0;
+                  width: max-content;
+
+                  left: -0.75ch;
+                  top: 7ch;
+                  transition: 0.15s ease-out;
+
+                  ul {
+                     font-size: 0.9em;
+                     position: relative;
+                     border: solid 1px
+                        color-mix(
+                           in srgb,
+                           var(--clr-f-100),
+                           var(--clr-f-300) 30%
+                        );
+                     color: var(--clr-f-700);
+                     background-color: color-mix(
+                        in srgb,
+                        var(--clr-base-lt),
+                        transparent 3%
+                     );
+                     display: flex;
+                     flex-direction: column;
+                     padding: 1.5ch;
+                     padding-right: 2.5rem;
+                     gap: 1rem;
+
+                     &::before {
+                        position: absolute;
+                        inset: 0;
+                        background-color: hs;
+                        filter: blur(10px);
+                     }
+                  }
+               }
+
+               &:hover {
+                  .dropdown {
+                     top: calc(2ch + var(--offset));
+                     visibility: visible;
+                     opacity: 1;
+                     transition: 0.5s cubic-bezier(0, 1, 0, 1);
+                  }
+               }
+            }
+         }
+      }
+
+      .logo {
+         height: 100%;
+
+         img {
+            height: 100%;
+            width: auto;
+         }
+      }
+   }
+</style>

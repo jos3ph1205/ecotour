@@ -32,4 +32,49 @@ const { grunge, id } = Astro.props;
 
       gb.classList.add(val);
    });
-</script>
+</script> 
+<style is:global>
+   .grunge-border {
+      --gb-url-top: ;
+      --gb-url-btm: ;
+      --shadow: drop-shadow(0 0px 12px hsla(0, 0%, 0%, 0.22));
+
+      /* FILTER COLORS --> */
+      --gb-base-lt: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+         brightness(102%) contrast(102%) var(--shadow);
+      --gb-base: invert(99%) sepia(88%) saturate(1081%) hue-rotate(185deg)
+         brightness(124%) contrast(86%) var(--shadow);
+
+      --gb-green: invert(66%) sepia(34%) saturate(564%) hue-rotate(44deg)
+         brightness(100%) contrast(86%) var(--shadow);
+      --gb-green-dkr: invert(21%) sepia(70%) saturate(387%) hue-rotate(44deg)
+         brightness(94%) contrast(90%) var(--shadow);
+      /* FILTER COLORS <-- */
+
+      --filter-top: var(--gb-base-lt);
+      --filter-btm: var(--gb-base-lt);
+
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+   }
+   .grunge-border.top::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/images/grunge/top.png");
+      filter: var(--filter-top);
+      background-position: top;
+      background-size: cover;
+   }
+   .grunge-border.btm::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/images/grunge/btm.png");
+      filter: var(--filter-btm);
+      background-position: bottom;
+      background-size: cover;
+   }
+</style>
