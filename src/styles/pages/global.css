@@ -116,21 +116,21 @@ BASE STYLING
    padding: 0;
    margin: 0;
    -webkit-tap-highlight-color: transparent;
+   transition: box-shadow 0.2s ease;
 }
+
 *:focus-visible {
-   outline: solid 2px var(--clr-green-ltr);
-   outline-offset: 1px;
-   border-radius: 1pt;
-   animation: focus 0.03s ease-out forwards;
+   outline: none;
+   box-shadow: 0 0 0 3px var(--clr-green);
 }
 @keyframes focus {
    100% {
-      outline-offset: 3px;
+      outline-offset: 5px;
       outline-color: var(--clr-green);
    }
 }
 html {
-   scroll-behavior: smooth;
+   /* scroll-behavior: smooth; */
 }
 body {
    position: relative;
@@ -165,6 +165,27 @@ body {
    );
    cursor: grabbing;
 }
+
+.alpha-scrollbar {
+   &::-webkit-scrollbar {
+      width: 16px;
+      background-color: hsl(0, 0%, 90%);
+   }
+   &::-webkit-scrollbar-thumb {
+      border-radius: 7px;
+      background-color: hsla(0, 0%, 0%, 0.1);
+      border: solid 3px hsl(0, 0%, 90%);
+   }
+   &::-webkit-scrollbar-thumb:hover {
+      background-color: hsla(0, 0%, 0%, 0.13);
+      cursor: grab;
+   }
+   &::-webkit-scrollbar-thumb:active {
+      background-color: hsla(0, 0%, 0%, 0.17);
+      cursor: grabbing;
+   }
+}
+
 section,
 footer {
    --bg-position: center;
@@ -214,6 +235,7 @@ section:first-child {
    display: flex;
    gap: 1ch;
    width: max-content;
+   text-decoration: none;
 
    border: none;
    background-color: var(--clr-green);

@@ -1,7 +1,9 @@
 ---
-import "../styles/private-tours.css";
+import "../styles/pages/private-tours.css";
 import Main from "../layouts/MainLayout.astro";
 import { Picture } from "astro:assets";
+import GrungeBtm from "../components/grundgeBorderBtm.astro";
+import GrungeTop from "../components/grungeBorderTop.astro";
 
 import GetStartedIcon_1 from "../assets/images/private-tours/get-started/1.png";
 import GetStartedIcon_2 from "../assets/images/private-tours/get-started/2.png";
@@ -17,7 +19,7 @@ import GetInspired_6 from "../assets/images/private-tours/get-inspired/6.jpg";
 
 <Main title="Ecotour | Private Tours">
    <section class="parallax" id="home">
-      <div class="grunge-border btm"></div>
+      <GrungeBtm />
 
       <div class="page-title">
          <h2>ONE ISLAND - TWO FACES</h2>
@@ -59,7 +61,8 @@ import GetInspired_6 from "../assets/images/private-tours/get-inspired/6.jpg";
       </div>
    </section>
    <section id="get-started">
-      <div class="grunge-border btm top"></div>
+      <GrungeBtm />
+      <GrungeTop />
 
       <div class="section-title">
          <h2>Let's Get Started</h2>
@@ -100,7 +103,7 @@ import GetInspired_6 from "../assets/images/private-tours/get-inspired/6.jpg";
    </section>
 
    <section id="get-inspired">
-      <div class="grunge-border btm"></div>
+      <GrungeBtm />
 
       <div class="get-inspired-container">
          <div class="row">
@@ -253,7 +256,7 @@ import GetInspired_6 from "../assets/images/private-tours/get-inspired/6.jpg";
       </div>
    </section>
    <section id="book">
-      <div class="grunge-border btm"></div>
+      <GrungeBtm />
 
       <div class="book-container">
          <div class="title">

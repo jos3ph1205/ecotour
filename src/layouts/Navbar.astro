@@ -17,7 +17,7 @@ const { active } = Astro.props;
                <div class="dropdown">
                   <ul>
                      <li><a href="/tours-list">Tours List</a></li>
-                     <li><a href="">Single Tours</a></li>
+                     <li><a href="/single-tours">Single Tours</a></li>
                      <li><a href="/private-tours">Private Tours</a></li>
                   </ul>
                </div>
@@ -43,6 +43,10 @@ const { active } = Astro.props;
 </header>
 <style is:global>
    @keyframes nav-transition {
+      0% {
+         background-color: transparent;
+         color: var(--clr-f-100);
+      }
       100% {
          background-color: var(--clr-base-lt);
          color: var(--clr-f-700);
@@ -50,6 +54,8 @@ const { active } = Astro.props;
    }
    header {
       --padding-b: 1rem;
+      background-color: var(--clr-base-lt);
+      color: var(--clr-f-700);
       position: fixed;
       top: 0;
       left: 0;
@@ -61,10 +67,9 @@ const { active } = Astro.props;
       padding: var(--padding-b) var(--padding-i);
       gap: 2ch;
       height: 80px;
-      animation: nav-transition 0.5s linear forwards;
+      /* animation: nav-transition 0.5s linear forwards;
       animation-timeline: scroll(y);
-      animation-range: 0 20svh;
-      color: var(--clr-f-100);
+      animation-range: 0 20svh; */
       z-index: 10;
 
       .segmant {
@@ -97,11 +102,12 @@ const { active } = Astro.props;
             font-weight: var(--f-light);
             li {
                list-style: none;
-               
+
                a {
                   position: relative;
                   text-decoration: none;
                   color: inherit;
+                  display: block;
 
                   &::before {
                      content: "";
@@ -113,13 +119,12 @@ const { active } = Astro.props;
                      background-color: var(--clr-green);
                      transition: 0.15s ease-out;
                   }
-   
+
                   &:hover::before {
                      width: 100%;
                      transition: 0.5s cubic-bezier(0.2, 0.9, 0, 1);
                   }
                }
-
             }
 
             li.tours {
@@ -127,9 +132,13 @@ const { active } = Astro.props;
                display: flex;
                align-items: center;
                gap: 0.5ch;
+               cursor: default;
 
                & > i {
-                  font-size: 0.5em;
+                  transition: 0.15s ease;
+                  rotate: -90deg;
+                  font-size: 0.6em;
+                  margin-top: 0.2em;
                   color: var(--clr-f-300);
                }
 
@@ -182,6 +191,10 @@ const { active } = Astro.props;
                      visibility: visible;
                      opacity: 1;
                      transition: 0.5s cubic-bezier(0, 1, 0, 1);
+                  }
+
+                  i {
+                     rotate: 0deg;
                   }
                }
             }

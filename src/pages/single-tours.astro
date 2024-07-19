@@ -1,0 +1,42 @@
+---
+import "../styles/pages/tours-list.css";
+import Main from "../layouts/MainLayout.astro";
+import { Picture, getImage } from "astro:assets";
+import GrungeBtm from "../components/grundgeBorderBtm.astro";
+import GrungeTop from "../components/grungeBorderTop.astro";
+
+import HomeBG from "/src/assets/images/tours-lsit/home.jpg";
+
+const homeBackground = await getImage({
+   src: HomeBG,
+   format: "avif",
+});
+---
+
+<Main title="Ecotour | Tours List">
+   <section class="" id="home" style=`--bg-url: url(${homeBackground.src})`>
+      <GrungeBtm />
+
+      <div class="page-title">
+         <h2>Discover a hidden paradise</h2>
+         <h1>Our Travels</h1>
+      </div>
+   </section>
+   <section id="book">
+      <GrungeBtm />
+
+      <div class="book-container">
+         <div class="title">
+            <!-- <img src="/images/destinations/calendar.png" alt="" /> -->
+            <div class="section-title">
+               <h2>Book Now</h2>
+               <h2>Lorem ipsum dolor sit</h2>
+            </div>
+         </div>
+         <button class="btn invert">
+            <span>Check the dates</span>
+            <div class="btn-ripple"></div>
+         </button>
+      </div>
+   </section>
+</Main>

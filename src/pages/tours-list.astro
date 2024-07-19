@@ -1,20 +1,112 @@
 ---
-import "../styles/private-tours.css";
+import "../styles/pages/tours-list.css";
 import Main from "../layouts/MainLayout.astro";
-import { Picture } from "astro:assets";
+import { Picture, getImage } from "astro:assets";
+import GrungeBtm from "../components/grundgeBorderBtm.astro";
+import GrungeTop from "../components/grungeBorderTop.astro";
+
+import ToursList from "../components/ToursList2";
+
+import HomeBG from "/src/assets/images/tours-lsit/home.jpg";
+
+import Experience_1 from "/src/assets/images/home/experiences/1.jpg";
+import Experience_2 from "/src/assets/images/home/experiences/2.jpg";
+import Experience_3 from "/src/assets/images/home/experiences/3.jpg";
+
+const homeBackground = await getImage({
+   src: HomeBG,
+   format: "avif",
+});
 ---
 
-<Main title="Ecotour | Private Tours">
-   <section class="parallax" id="home">
-      <div class="grunge-border btm"></div>
+<Main title="Ecotour | Tours List">
+   <section
+      class="parallax"
+      id="home"
+      style=`--bg-url: url(${homeBackground.src})`
+   >
+      <GrungeBtm />
 
       <div class="page-title">
-         <h2>ONE ISLAND - TWO FACES</h2>
-         <h1>Hispaniola</h1>
+         <h2>Discover a hidden paradise</h2>
+         <h1>Our Travels</h1>
       </div>
    </section>
+   <section id="our-tours">
+      <div class="section-title">
+         <h2>Our Tours</h2>
+      </div>
+      <div class="our-tours-description">
+         <p>
+            Discover with EcoTour Barahona, your specialist in Ecotourism a new
+            face of the Dominican Republic, more human, more authentic!
+         </p>
+         <br />
+         <p>
+            We have artistically designed unique excursions for you, accompanied
+            by professional and possionate local guides who will show you the
+            best of this part of the country.
+         </p>
+      </div>
+   </section>
+   <section id="tours-list">
+      <ToursList client:visible />
+   </section>
+   <section id="experiences">
+      <div class="section-title">
+         <h2>Featured Travel Experiences</h2>
+      </div>
+
+      <div class="experiences-container">
+         <div class="row">
+            <div class="experience-card highlighted">
+               <Picture
+                  src={Experience_1}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$55</span>
+                  <div class="details">
+                     <p>Price per adult</p>
+                     <p>Departing from: Barahona</p>
+                     <span><i class="fa-regular fa-clock"></i> 5-6 hours</span>
+                  </div>
+               </div>
+            </div>
+            <div class="experience-card">
+               <Picture
+                  src={Experience_2}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$60</span>
+               </div>
+            </div>
+            <div class="experience-card">
+               <Picture
+                  src={Experience_3}
+                  alt="Experience location"
+                  formats={["webp"]}
+                  loading="eager"
+               />
+               <div class="content">
+                  <p>Garden of Eden</p>
+                  <span>$99</span>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <a href="/#experiences" class="btn">See More</a>
+   </section>
    <section id="book">
-      <div class="grunge-border btm"></div>
+      <GrungeBtm />
 
       <div class="book-container">
          <div class="title">

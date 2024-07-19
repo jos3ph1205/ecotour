@@ -4,22 +4,22 @@ BTN CLICK ANIMATION
 const rippleBtn = document.querySelectorAll(".btn");
 
 rippleBtn.forEach((btn) => {
+   if (btn.hasAttribute("data-block")) {
+      return;
+   }
    let btnRipple = btn.appendChild(document.createElement("div"));
-   btnRipple.classList.add("btn-ripple");
+   btnRipple.className = "btn-ripple";
 
    btn.oncontextmenu = (e) => e.preventDefault();
 
    btn.onmousedown = (e) => {
-      let cursorPos = {
-         x: e.offsetX,
-         y: e.offsetY,
-      };
-
       let ripple = btnRipple.appendChild(document.createElement("span"));
-      ripple.classList.add("ripple");
+      ripple.className = "ripple";
 
-      ripple.style.left = `${cursorPos.x}px`;
-      ripple.style.top = `${cursorPos.y}px`;
+      ripple.style.cssText = `
+         top: ${e.offsetY}px;
+         left: ${e.offsetX}px;
+      `;
 
       setTimeout(() => {
          ripple.remove();

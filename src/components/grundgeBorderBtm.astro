@@ -1,0 +1,16 @@
+---
+import "../styles/components/grungeBoard.css";
+import { getImage } from "astro:assets";
+import grungeBdBtm from "../assets/images/grunge/btm.png";
+
+const grungeBdBtmImg = await getImage({
+   src: grungeBdBtm,
+   format: "avif",
+});
+---
+
+<div
+   class="grunge-border btm"
+   style=`--gb-url-top: url(${grungeBdBtmImg.src});`
+>
+</div>

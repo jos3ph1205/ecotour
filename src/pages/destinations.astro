@@ -1,8 +1,9 @@
 ---
-import "../styles/destinations.css";
+import "../styles/pages/destinations.css";
 import Main from "../layouts/MainLayout.astro";
 import { Picture, getImage } from "astro:assets";
-import Grunge from "../components/grundgeBorder.astro";
+import GrungeBtm from "../components/grundgeBorderBtm.astro";
+import GrungeTop from "../components/grungeBorderTop.astro";
 
 import Destination_1 from "../assets/images/destinations/destination-1.jpg";
 import Destination_2 from "../assets/images/destinations/destination-2.jpg";
@@ -39,7 +40,7 @@ const mapIcon = await getImage({
       id="destinations-home"
       style=`--bg-url: url(${homeBackground.src});`
    >
-      <Grunge grunge="btm" id="home" />
+      <GrungeBtm />
 
       <div class="page-title">
          <h2>ONE ISLAND - TWO FACES</h2>
@@ -155,7 +156,8 @@ const mapIcon = await getImage({
    </section>
 
    <section id="quote" style=`--bg-url: url(${quoteBackground.src});`>
-      <Grunge grunge="btm top" id="quote" />
+      <GrungeBtm />
+      <GrungeTop />
 
       <div class="quote-container">
          The varied climate, geography, as well as plants and fauna found in the
@@ -200,7 +202,7 @@ const mapIcon = await getImage({
    </section>
 
    <section id="guide" style=`--bg-url: url(${guideBackground.src});`>
-      <Grunge grunge="top" id="guide" />
+      <GrungeTop />
 
       <div class="guide-container">
          <div class="guide-content">
@@ -236,7 +238,7 @@ const mapIcon = await getImage({
    </section>
 
    <section id="book">
-      <Grunge grunge="btm" id="book" />
+      <GrungeBtm />
 
       <div class="book-container">
          <div class="title">

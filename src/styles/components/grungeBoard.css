@@ -1,40 +1,4 @@
----
-import { getImage } from "astro:assets";
-import grungeBdTop from "../assets/images/grunge/top.png";
-import grungeBdBtm from "../assets/images/grunge/btm.png";
-
-const grungeBdTopImg = await getImage({
-   src: grungeBdTop,
-   format: "avif",
-});
-const grungeBdBtmImg = await getImage({
-   src: grungeBdBtm,
-   format: "avif",
-});
-
-const { grunge, id } = Astro.props;
----
-
-<div class="grunge-border" data-grunge={grunge} data-id={id}></div>
-<script define:vars={{ id, grungeBdTopImg, grungeBdBtmImg }}>
-   const gb = document.querySelector(`.grunge-border[data-id="${id}"]`);
-   const data = gb.getAttribute("data-grunge").split(" ");
-
-   data.forEach((val) => {
-      let img = "";
-      if (val == "top") {
-         img = grungeBdTopImg.src;
-      } else if (val == "btm") {
-         img = grungeBdBtmImg.src;
-      }
-
-      gb.style.cssText = `--gb-url-${val}: url(${img});`;
-
-      gb.classList.add(val);
-   });
-</script> 
-<style is:global>
-   .grunge-border {
+.grunge-border {
       --gb-url-top: ;
       --gb-url-btm: ;
       --shadow: drop-shadow(0 0px 12px hsla(0, 0%, 0%, 0.22));
@@ -63,7 +27,7 @@ const { grunge, id } = Astro.props;
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url("/images/grunge/top.png");
+      background-image: var(--gb-url-top);
       filter: var(--filter-top);
       background-position: top;
       background-size: cover;
@@ -72,9 +36,8 @@ const { grunge, id } = Astro.props;
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url("/images/grunge/btm.png");
+      background-image: var(--gb-url-top);
       filter: var(--filter-btm);
       background-position: bottom;
       background-size: cover;
    }
-</style>
