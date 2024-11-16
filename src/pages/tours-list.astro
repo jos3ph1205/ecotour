@@ -1,7 +1,7 @@
 ---
 import "../styles/pages/tours-list.css";
 import Main from "../layouts/MainLayout.astro";
-import { Image, getImage } from "astro:assets";
+import { Picture, getImage } from "astro:assets";
 import GrungeBtm from "../components/grundgeBorderBtm.astro";
 import GrungeTop from "../components/grungeBorderTop.astro";
 
@@ -60,10 +60,10 @@ const homeBackground = await getImage({
       <div class="experiences-container">
          <div class="row">
             <div class="experience-card highlighted">
-               <Image
+               <Picture
                   src={Experience_1}
                   alt="Experience location"
-                  format="webp"
+                  formats={["webp"]}
                   loading="eager"
                />
                <div class="content">
@@ -77,10 +77,10 @@ const homeBackground = await getImage({
                </div>
             </div>
             <div class="experience-card">
-               <Image
+               <Picture
                   src={Experience_2}
                   alt="Experience location"
-                  format="webp"
+                  formats={["webp"]}
                   loading="eager"
                />
                <div class="content">
@@ -89,10 +89,10 @@ const homeBackground = await getImage({
                </div>
             </div>
             <div class="experience-card">
-               <Image
+               <Picture
                   src={Experience_3}
                   alt="Experience location"
-                  format="webp"
+                  formats={["webp"]}
                   loading="eager"
                />
                <div class="content">
