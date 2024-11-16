@@ -241,15 +241,15 @@ const { active } = Astro.props;
       .toggle .line:nth-child(2) {
          top: 50%;
          translate: -50% -50%;
-         transition: 0.05s ease;
+         transition: 0.05s;
       }
       .toggle .line:last-child {
          bottom: 0;
-         transition: bottom 0.25s, rotate 0.25s;
+         transition: bottom 0.25s cubic-bezier(.3,-0.4,.15,1), rotate 0.25s;
       }
       .toggle .line:first-child {
          top: 0;
-         transition: top 0.25s, rotate 0.25s;
+         transition: top 0.25s cubic-bezier(.3,-0.4,.15,1), rotate 0.25s;
       }
 
       .toggle.show .line:nth-child(2) {

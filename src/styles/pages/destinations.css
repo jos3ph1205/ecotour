@@ -104,6 +104,7 @@ section#geography {
       background-image: var(--map-icon);
       background-size: contain;
       background-position: center;
+      background-repeat: no-repeat;
       z-index: 1;
    }
 }
@@ -228,20 +229,26 @@ section#guide {
       position: absolute;
       right: 50%;
       translate: 50% -10%;
-      width: 80%;
+      width: 95%;
       aspect-ratio: 15 / 9;
       max-height: 450px;
       overflow: hidden;
    }
-}
 
-@media only screen and (max-width: 768px) {
    .geography-container {
       flex-direction: column;
    }
 }
 
 @media only screen and (max-width: 524px) {
+   .geography-fact {
+      padding-inline: 3em 2em !important;
+
+      &::before {
+         height: 4.5em !important;
+         left: 0.5em !important;
+      }
+   }
    .history-container {
       flex-direction: column;
    }

@@ -377,15 +377,45 @@ footer {
    }
 }
 
-.footer-wrapper .col.general {
-   display: flex;
-   flex-direction: column;
-   font-size: 0.75em;
-   gap: 1em;
-}
-.footer-wrapper .title {
-   color: var(--clr-green);
-   text-align: left;
+.footer-wrapper {
+   .title {
+      color: var(--clr-green);
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: var(--f-normal);
+   }
+
+   .col.general {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.75em;
+      gap: 1em;
+   }
+   .col.about-us,
+   .col.customer-service {
+      line-height: 1.75em;
+   }
+   .col.reservations {
+      display: flex;
+      flex-direction: column;
+      gap: 1ch;
+
+      .link {
+         p {
+            text-transform: uppercase;
+         }
+         span {
+            font-size: 0.85em;
+         }
+      }
+   }
+   .col.socials {
+      .socials-container {
+         display: flex;
+         gap: 1ch;
+         margin-top: 1ch;
+      }
+   }
 }
 
 @media only screen and (max-width: 768px) {
