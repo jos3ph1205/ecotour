@@ -16,9 +16,9 @@ const { active } = Astro.props;
                Tours <i class="fa-solid fa-chevron-down"></i>
                <div class="dropdown">
                   <ul>
-                     <li><a href="/tours-list">Tours List</a></li>
-                     <li><a href="/single-tours">Single Tours</a></li>
-                     <li><a href="/private-tours">Private Tours</a></li>
+                     <li><a aria-label="Tours list link" href="/tours-list">Tours List</a></li>
+                     <li><a aria-label="Single tours link" href="/single-tours">Single Tours</a></li>
+                     <li><a aria-label="Private tours link" href="/private-tours">Private Tours</a></li>
                   </ul>
                </div>
             </li>
@@ -28,17 +28,24 @@ const { active } = Astro.props;
    <div class="segmant">
       <div class="logo">
          <Picture
-            src={Logo}
-            alt="Ecotour Logo"
-            formats={["webp"]}
-            loading="eager"
+         src={Logo}
+         alt="Ecotour Logo"
+         formats={["webp"]}
+         loading="eager"
          />
       </div>
    </div>
    <div class="segmant">
       <button class="btn outline"
-         ><i class="fa-solid fa-phone"></i> Get in touch</button
+      ><i class="fa-solid fa-phone"></i> Get in touch</button
       >
+   </div>
+   <div class="segmant">
+      <div class="toggle">
+         <div class="line"></div>
+         <div class="line"></div>
+         <div class="line"></div>
+      </div>
    </div>
 </header>
 <style is:global>
@@ -91,6 +98,9 @@ const { active } = Astro.props;
          display: flex;
          align-items: center;
          justify-content: right;
+      }
+      .segmant:nth-of-type(4) {
+         display: none;
       }
 
       nav {
@@ -205,9 +215,108 @@ const { active } = Astro.props;
          height: 100%;
 
          img {
-            height: 100%;
             width: auto;
+            height: 100%;
          }
+      }
+
+      .toggle {
+         display: inline;
+         font-size: 1rem;
+         position: relative;
+         color: var(--clr-green);
+         height: 1.6em;
+         aspect-ratio: 1 / 1;
+         cursor: pointer;
+      }
+      .toggle .line {
+         position: absolute;
+         width: 100%;
+         height: 3px;
+         border-radius: 100vh;
+         background-color: var(--clr-green);
+         left: 50%;
+         translate: -50% 0;
+      }
+      .toggle .line:nth-child(2) {
+         top: 50%;
+         translate: -50% -50%;
+         transition: 0.05s ease;
+      }
+      .toggle .line:last-child {
+         bottom: 0;
+         transition: bottom 0.25s, rotate 0.25s;
+      }
+      .toggle .line:first-child {
+         top: 0;
+         transition: top 0.25s, rotate 0.25s;
+      }
+
+      .toggle.show .line:nth-child(2) {
+         opacity: 0;
+         transition: 0.2s ease;
+      }
+      .toggle.show .line:last-child {
+         bottom: 50%;
+         translate: -50% 50%;
+         rotate: 45deg;
+         transition: bottom 0.22s, rotate 0.35s 0.2s;
+      }
+      .toggle.show .line:first-child {
+         top: 50%;
+         rotate: -45deg;
+         translate: -50% -50%;
+         transition: top 0.22s, rotate 0.35s 0.2s;
+      }
+   }
+
+   @media only screen and (max-width: 1024px) {
+      header {
+         /* flex-direction: column; */
+
+         .segmant:nth-of-type(3) {
+            display: none;
+         }
+         .segmant:nth-of-type(2) {
+            justify-content: right;
+         }
+      }
+   }
+
+   @media only screen and (max-width: 768px) {
+      .btn {
+         font-size: .9rem;
+      }
+      .segmant {
+         justify-content: center !important;
+
+         &:nth-of-type(3) {
+            display: none !important;
+         }
+      }
+
+      header {
+         padding-block: 0.6rem !important;
+         height: 60px;
+         justify-content: flex-end !important;
+      }
+
+      nav {
+         & > ul {
+            gap: 1.5ch !important;
+         }
+      }
+
+      .segmant:nth-of-type(1) {
+         display: none !important;
+      }
+      .segmant:nth-of-type(2) {
+         justify-content: left !important;
+      }
+      .segmant:nth-of-type(4) {
+         display: flex !important;
+         justify-content: right !important;
+         align-items: center;
       }
    }
 </style>

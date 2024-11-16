@@ -5,9 +5,9 @@ import { Picture, getImage } from "astro:assets";
 import GrungeBtm from "../components/grundgeBorderBtm.astro";
 import GrungeTop from "../components/grungeBorderTop.astro";
 
-import ToursList from "../components/ToursList2";
+import TourList from "../components/ToursList.jsx";
 
-import HomeBG from "/src/assets/images/tours-lsit/home.jpg";
+import HomeBG from "/src/assets/images/tours-list/home.jpg";
 
 import Experience_1 from "/src/assets/images/home/experiences/1.jpg";
 import Experience_2 from "/src/assets/images/home/experiences/2.jpg";
@@ -50,7 +50,7 @@ const homeBackground = await getImage({
       </div>
    </section>
    <section id="tours-list">
-      <ToursList client:visible />
+      <TourList client:visible />
    </section>
    <section id="experiences">
       <div class="section-title">
@@ -103,23 +103,6 @@ const homeBackground = await getImage({
          </div>
       </div>
 
-      <a href="/#experiences" class="btn">See More</a>
-   </section>
-   <section id="book">
-      <GrungeBtm />
-
-      <div class="book-container">
-         <div class="title">
-            <!-- <img src="/images/destinations/calendar.png" alt="" /> -->
-            <div class="section-title">
-               <h2>Book Now</h2>
-               <h2>Lorem ipsum dolor sit</h2>
-            </div>
-         </div>
-         <button class="btn invert">
-            <span>Check the dates</span>
-            <div class="btn-ripple"></div>
-         </button>
-      </div>
+      <a href="/#experiences" class="btn">Book Now</a>
    </section>
 </Main>

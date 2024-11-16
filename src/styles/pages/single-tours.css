@@ -1,0 +1,212 @@
+section#home {
+   --bg-position: 0 40%;
+   --bg-filter: brightness(0.6);
+
+   .page-title {
+      color: var(--clr-f-100);
+      text-align: center;
+      h2 {
+         font-weight: var(--f-light);
+         font-weight: 2.8em;
+         text-transform: uppercase;
+      }
+      h1 {
+         font-family: "AbhayaLibre";
+         font-size: 3.5rem;
+         font-weight: var(--f-bold);
+      }
+   }
+}
+
+.tour-info-container {
+   width: 100%;
+   font-size: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 4em;
+}
+
+.tour-info-filter {
+   border-bottom: solid 3px var(--clr-green);
+   gap: 12em;
+   display: flex;
+
+   div {
+      font-size: 1.1em;
+      text-transform: uppercase;
+      padding: 0.8em 0.5em;
+
+      &.active {
+         border-bottom: solid 5px var(--clr-green);
+         font-weight: var(--f-medium);
+      }
+   }
+}
+
+.tour-info-content {
+   display: flex;
+   gap: 2.5rem;
+
+   .info-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 2rem;
+      background-color: hsla(0, 0%, 0%, 0.05);
+      width: max-content;
+      color: var(--clr-f-700);
+
+      .details {
+         font-size: 1.1em;
+
+         p {
+            display: flex;
+            align-items: center;
+            padding-block: 1rem;
+
+            span {
+               width: max-content;
+            }
+
+            i {
+               width: 3ch;
+            }
+
+            &:not(:last-child) {
+               border-bottom: solid 1.5px hsla(0, 0%, 0%, 0.4);
+            }
+         }
+      }
+
+      .price {
+         display: flex;
+         flex-direction: column;
+         padding: 2rem;
+         background-color: hsla(0, 0%, 0%, 0.05);
+         gap: 1rem;
+         align-items: center;
+         text-align: center;
+
+         p {
+            font-weight: var(--f-medium);
+            strong {
+               font-size: 1.2em;
+               background-color: var(--clr-green);
+               font-family: "AbhayaLibre";
+               padding: 0.1em 0.6em;
+               margin-right: 0.3em;
+               color: white;
+            }
+         }
+
+         & > span {
+            font-weight: var(--f-normal);
+         }
+      }
+   }
+
+   .map {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      iframe {
+         width: 100%;
+         display: block;
+      }
+   }
+}
+
+section#gallery {
+   padding-inline: 0 !important;
+}
+
+.slideshow-dots {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+
+   .dot {
+      cursor: pointer;
+      height: 0.5em;
+      aspect-ratio: 1 / 1;
+      background-color: hsla(0, 0%, 0%, 0.25);
+      border-radius: 0.5em;
+      transition: background-color 0.3s ease;
+
+      &:hover,
+      &.active {
+         background-color: hsla(0, 0%, 10%, 0.7);
+         scale: 1.3;
+      }
+   }
+
+   &:has(.dot:hover) > .dot:not(.dot:hover) {
+      background-color: hsla(0, 0%, 0%, 0.25);
+   }
+}
+.gallery-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   gap: 3em;
+}
+
+.slideshow-container {
+   height: 600px;
+   width: 100%;
+
+   .slide {
+      height: 100%;
+      width: 100%;
+      display: block;
+      animation-name: fade;
+      animation-duration: 0.5s;
+      overflow: hidden;
+
+      img {
+         display: block;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+@keyframes fade {
+   from {
+      opacity: 0.7;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .tour-info-filter {
+      gap: 2em;
+   }
+   .tour-info-content {
+      flex-direction: column;
+      gap: 2rem;
+
+      & > div {
+         width: 100% !important;
+      }
+   }
+}
+
+@media only screen and (max-width: 524px) {
+   .tour-info-filter {
+      overflow-x: scroll;
+      border-bottom: none;
+
+      &::-webkit-scrollbar {
+         height: 9px !important;
+      }
+   }
+
+   .tour-info-content {
+      font-size: 0.85em !important;
+   }
+}

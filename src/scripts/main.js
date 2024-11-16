@@ -26,3 +26,15 @@ rippleBtn.forEach((btn) => {
       }, 600);
    };
 });
+
+/* --------------------------------------------------
+SIDENAV TOGGLE
+-------------------------------------------------- */
+
+let menuToggleBtn = document.querySelector(".toggle");
+let sideNav = document.querySelector(".sidenav");
+
+menuToggleBtn.addEventListener("click", () => {
+   menuToggleBtn.classList.toggle("show");
+   sideNav.classList.toggle("show");
+});

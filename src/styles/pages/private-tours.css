@@ -19,7 +19,7 @@ section#home {
 
       h1 {
          font-size: 3.5em;
-         font-family: 'AbhayaLibre';
+         font-family: "AbhayaLibre";
       }
    }
 }
@@ -45,7 +45,7 @@ section#home {
       color: var(--clr-f-100);
 
       h3 {
-         font-family: 'AbhayaLibre';
+         font-family: "AbhayaLibre";
          font-size: 2em;
       }
    }
@@ -77,14 +77,14 @@ section#get-inspired {
 
 .get-started-container {
    width: 100%;
-   background-color: hsla(0, 0%, 0%, .6);
+   background-color: hsla(0, 0%, 0%, 0.6);
    padding: 5rem 3rem;
    position: relative;
 
    .step {
       display: flex;
       gap: 6ch;
-   
+
       .step-box {
          color: white;
          display: flex;
@@ -92,7 +92,7 @@ section#get-inspired {
          align-items: center;
          gap: 3ch;
          width: 100%;
-   
+
          Picture {
             width: 70px;
             aspect-ratio: 1 / 1;
@@ -109,28 +109,32 @@ section#get-inspired {
       position: absolute;
       left: 50%;
       bottom: 0;
-      translate: -50% 50%
+      translate: -50% 50%;
    }
 }
 
 .get-inspired-container {
    display: flex;
    flex-direction: column;
-   gap: .25ch;
+   gap: 0.25ch;
    height: 60svh;
-   
-   .row  {
+
+   .row {
       width: 100%;
       display: flex;
       height: 100%;
       gap: inherit;
-      
+
       .excursion {
          position: relative;
          padding: 2rem;
-         border-image: linear-gradient(hsla(0, 0%, 0%, .1) 20%, hsla(0, 0%, 0%, 0.1) 85%) fill 1;
+         border-image: linear-gradient(
+               hsla(0, 0%, 0%, 0.1) 20%,
+               hsla(0, 0%, 0%, 0.1) 85%
+            )
+            fill 1;
          color: white;
-         
+
          img {
             z-index: -1;
             position: absolute;
@@ -140,12 +144,15 @@ section#get-inspired {
             object-fit: cover;
          }
          h3 {
-            font-family: 'AbhayaLibre';
+            font-family: "AbhayaLibre";
             font-size: 2rem;
          }
-      }
-      .excursion:has(> p) {
-         border-image: linear-gradient(hsla(0, 0%, 0%, .25) 20%, hsla(0, 0%, 0%, 0.25) 85%) fill 1;
+
+         border-image: linear-gradient(
+               hsla(0, 0%, 0%, 0.45) 20%,
+               hsla(0, 0%, 0%, 0.6) 85%
+            )
+            fill 1 !important;
       }
 
       .excursion:first-child {
@@ -190,11 +197,21 @@ section#experts {
          --grid-column-count: 3;
          --grid-item--min-width: 110px;
 
-         --total-gap-width: calc((var(--grid-column-count) - 1) * var(--grid-layout-gap));
-         --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+         --total-gap-width: calc(
+            (var(--grid-column-count) - 1) * var(--grid-layout-gap)
+         );
+         --grid-item--max-width: calc(
+            (100% - var(--total-gap-width)) / var(--grid-column-count)
+         );
 
          display: grid;
-         grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+         grid-template-columns: repeat(
+            auto-fill,
+            minmax(
+               max(var(--grid-item--min-width), var(--grid-item--max-width)),
+               1fr
+            )
+         );
          gap: var(--grid-layout-gap);
 
          img {
@@ -230,14 +247,14 @@ section#experts {
          .content::before {
             content: "„";
             font-size: 7em;
-            margin-top: -.7em;
-            margin-bottom: -.15em;
-            font-family: 'AbhayaLibre';
+            margin-top: -0.7em;
+            margin-bottom: -0.15em;
+            font-family: "AbhayaLibre";
             color: var(--clr-green-dkr);
          }
 
          .author {
-            font-size: .85em;
+            font-size: 0.85em;
             font-weight: var(--f-medium);
             color: var(--clr-f-700);
          }
@@ -247,11 +264,11 @@ section#experts {
             font-weight: var(--f-thin);
             display: flex;
             align-items: center;
-            gap: 1ch; 
+            gap: 1ch;
 
             .stars {
                display: flex;
-               gap: .4ch;
+               gap: 0.4ch;
 
                span {
                   width: 2ch;
@@ -274,13 +291,13 @@ section#experts {
 
          img {
             width: 9em;
+            height: auto;
          }
 
          .content {
             display: flex;
             flex-direction: column;
             gap: 1ch;
-            
 
             .name {
                font-size: 1.4em;
@@ -296,19 +313,60 @@ section#experts {
 
                .stars {
                   display: flex;
-                  gap: .4ch;
+                  gap: 0.4ch;
 
                   span {
                      width: 2ch;
-                     aspect-ratio: 1 / 1;
+                     height: 2ch;
                      background-color: var(--clr-tripadvisor-primary);
                      border-radius: 50%;
                   }
                }
-
-               
             }
          }
       }
+   }
+}
+
+@media only screen and (max-width: 1176px) {
+   .experts-container {
+      flex-direction: column;
+      .col {
+         width: 100% !important;
+      }
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .private-tours-type {
+      flex-direction: column;
+   }
+   #get-inspired {
+      min-height: 140svh;
+   }
+   .get-inspired-container {
+      .row {
+         flex-direction: column !important;
+      }
+   }
+   .expert-profiles {
+      gap: 1.2rem !important;
+   }
+}
+
+@media only screen and (max-width: 524px) {
+   .get-started-container {
+      .step {
+         flex-direction: column;
+      }
+   }
+   .experts-container {
+      .tripadvisor-info {
+         flex-direction: column !important;
+         align-items: center !important;
+      }
+   }
+   .tripadvisor-review {
+      font-size: 1em !important;
    }
 }

@@ -1,11 +1,11 @@
 ---
-import "../styles/pages/tours-list.css";
+import "../styles/pages/single-tours.css";
 import Main from "../layouts/MainLayout.astro";
 import { Picture, getImage } from "astro:assets";
 import GrungeBtm from "../components/grundgeBorderBtm.astro";
 import GrungeTop from "../components/grungeBorderTop.astro";
 
-import HomeBG from "/src/assets/images/tours-lsit/home.jpg";
+import HomeBG from "/src/assets/images/single-tours/home.jpg";
 
 const homeBackground = await getImage({
    src: HomeBG,
@@ -18,25 +18,86 @@ const homeBackground = await getImage({
       <GrungeBtm />
 
       <div class="page-title">
-         <h2>Discover a hidden paradise</h2>
-         <h1>Our Travels</h1>
+         <h2>Half Day</h2>
+         <h1>Horeseback Riding</h1>
+      </div>
+
+      <button class="btn">
+         <span>Book Now</span>
+      </button>
+   </section>
+   <section id="tour-info">
+      <div class="section-title">
+         <h2>Horseback to the mountains Paraiso</h2>
+         <div class="tour-info-wrapper">
+            <div class="filter"></div>
+         </div>
+      </div>
+
+      <div class="tour-info-container">
+         <div class="tour-info-filter alpha-scrollbar">
+            <div class="active">
+               Highlights
+            </div>
+            <div>Description</div>
+            <div>Galery</div>
+         </div>
+         <div class="tour-info-content">
+            <div class="info-wrapper">
+               <p class="route">
+                  Ruote: Barahona = Paraiso
+               </p>
+               <div class="details">
+                  <p><i class="fa-regular fa-clock"></i><span>Horseback riding / Duration: 3-4 hours</span></p>
+                  <p><i class="fa-solid fa-location-dot"></i><span>Departing from: Barahona</span></p>
+                  <p><i class="fa-solid fa-camera"></i><span>Panoramic view over the Caribbean Sea</span></p>
+                  <p><i class="fa-solid fa-water"></i><span>Ride through a river</span></p>
+                  <p><i class="fa-solid fa-house-flag"></i><span>Stop at the paprika greenhouse</span></p>
+               </div>
+               <div class="price">
+                  <p><strong>$60</strong> per adult</p>
+                  <span>Gauranteed departures from 2 adults on</span>
+               </div>
+            </div>
+            <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d455992.5840416419!2d-71.20620568479721!3d18.01834633786083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smy!4v1725371253256!5m2!1sen!2smy" width="800" height="520" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+         </div>
       </div>
    </section>
-   <section id="book">
-      <GrungeBtm />
-
-      <div class="book-container">
-         <div class="title">
-            <!-- <img src="/images/destinations/calendar.png" alt="" /> -->
-            <div class="section-title">
-               <h2>Book Now</h2>
-               <h2>Lorem ipsum dolor sit</h2>
+   <section id="gallery">
+      <div class="gallery-container">
+         <div class="slideshow-container">
+            <div class="slide">
+               <img src="/images/private-tours/get-inspired/1.jpg" alt="">
+            </div>
+            <div class="slide">
+               <img src="/images/private-tours/get-inspired/2.jpg" alt="">
+            </div>
+            <div class="slide">
+               <img src="/images/private-tours/get-inspired/3.jpg" alt="">
+            </div>
+            <div class="slide">
+               <img src="/images/private-tours/get-inspired/4.jpg" alt="">
+            </div>
+            <div class="slide">
+               <img src="/images/private-tours/get-inspired/5.jpg" alt="">
+            </div>
+            <div class="slide">
+               <img src="/images/private-tours/get-inspired/6.jpg" alt="">
             </div>
          </div>
-         <button class="btn invert">
-            <span>Check the dates</span>
-            <div class="btn-ripple"></div>
-         </button>
+         <div class="slideshow-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+         </div>
       </div>
+
+      <button class="btn">Load More</a>
    </section>
+
+   <script src="/src/scripts/slideshow.js"></script>
 </Main>

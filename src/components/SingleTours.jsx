@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { collectionData } from "../content/tours-list";
+import { collectionData } from "../content/";
 
 const ToursList = () => {
    const [count, setCount] = useState(6);

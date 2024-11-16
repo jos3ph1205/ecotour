@@ -87,7 +87,7 @@ section#geography {
 .geography-container .col:last-child {
    .geography-fact {
       position: relative;
-      font-size: .9em;
+      font-size: 0.9em;
       line-height: 1.8ch;
       background-color: white;
       padding-block: 2em;
@@ -210,4 +210,39 @@ section#guide {
    aspect-ratio: 15 / 9;
    max-height: 450px;
    overflow: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+   section#guide {
+      min-height: 150svh;
+   }
+
+   .guide-container {
+      margin-top: -20rem;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .guide-image Picture img {
+      font-size: 1rem;
+      position: absolute;
+      right: 50%;
+      translate: 50% -10%;
+      width: 80%;
+      aspect-ratio: 15 / 9;
+      max-height: 450px;
+      overflow: hidden;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .geography-container {
+      flex-direction: column;
+   }
+}
+
+@media only screen and (max-width: 524px) {
+   .history-container {
+      flex-direction: column;
+   }
 }

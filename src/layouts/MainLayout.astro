@@ -1,6 +1,9 @@
 ---
 import Head from "../layouts/CommonHead.astro";
 import Nav from "../layouts/Navbar.astro";
+import SideNav from "../layouts/SideNav.astro";
+import GrungeBtm from "../components/grundgeBorderBtm.astro";
+import GrungeTop from "../components/grungeBorderTop.astro";
 
 const { title } = Astro.props;
 ---
@@ -13,9 +16,30 @@ const { title } = Astro.props;
 
    <body>
       <Nav />
+      <SideNav />
       <main>
          <slot />
+
+
+         <section id="book">
+            <GrungeBtm />
+
+            <div class="book-container">
+               <div class="title">
+                  <!-- <img src="/images/home/calendar.png" alt="" /> -->
+                  <div class="section-title">
+                     <h2>Book Now</h2>
+                     <h2>Lorem ipsum dolor sit</h2>
+                  </div>
+               </div>
+               <button class="btn invert">
+                  <span>Check the dates</span>
+               </button>
+            </div>
+         </section>
       </main>
+
+
 
       <footer>
          <div class="footer-wrapper">

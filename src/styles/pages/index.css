@@ -18,7 +18,7 @@ section#home {
       }
       h1 {
          font-family: "AbhayaLibre";
-         font-size: 3.5rem;
+         font-size: 3.5em;
          font-weight: var(--f-bold);
       }
    }
@@ -186,6 +186,12 @@ section#about {
 /* --------------------------------------------------
 FEATURED EXPERIENCES SECTION
 -------------------------------------------------- */
+section#experiences {
+   .section-title {
+      text-align: center;
+   }
+}
+
 .experiences-container {
    --gap: 1em;
    font-size: 1rem;
@@ -261,6 +267,7 @@ section#features {
    justify-content: center;
 
    .section-title h2 {
+      text-align: center;
       color: var(--clr-f-100);
    }
 }
@@ -368,3 +375,93 @@ OPINIONS SECTION
       }
    }
 }
+
+@media only screen and (max-width: 1024px) {
+   section#about {
+      height: 100svh;
+   }
+
+   .about-container {
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .about-video-wrapper {
+      font-size: 1rem;
+      position: absolute;
+      right: 50%;
+      translate: 50% -10%;
+      width: 80%;
+      aspect-ratio: 15 / 9;
+      max-height: 450px;
+      overflow: hidden;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .page-title {
+      font-size: 0.85rem !important;
+   }
+   .trip-box {
+      font-size: 0.9rem !important;
+
+      img {
+         width: 130px;
+      }
+   }
+
+   .experiences-container {
+      font-size: 0.7rem;
+   }
+}
+
+@media only screen and (max-width: 524px) {
+   .trips-container {
+      flex-direction: column;
+      gap: 3em;
+   }
+
+   .about-content {
+      padding-bottom: 5em;
+      h2 {
+         font-size: 3em !important;
+      }
+   }
+
+   .features-container {
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   }
+
+   /* .experiences-container {
+      flex-direction: column;
+   } */
+
+   .page-title {
+      font-size: 0.65rem !important;
+   }
+
+   .opinions-container {
+      flex-direction: column;
+      gap: 3em !important;
+   }
+   .opinions-container .title {
+      text-align: center;
+      align-items: center;
+   }
+   .opinions-container .opinion {
+      align-items: center;
+      gap: 2rem;
+
+      .content {
+         text-align: center;
+      }
+
+      ::before {
+         content: "" !important;
+      }
+   }
+}
+
+/*  */

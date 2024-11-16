@@ -51,7 +51,8 @@ section#tours-list {
    width: 100%;
 
    .tours-list-filter {
-      display: flex;
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr);
       gap: inherit;
 
       button {
@@ -71,6 +72,10 @@ section#tours-list {
 
          & > * {
             pointer-events: none;
+         }
+
+         img {
+            width: 150px;
          }
       }
 
@@ -114,7 +119,101 @@ section#tours-list {
             width: 100%;
 
             img {
-               width: min(350px, 40%);
+               width: min(500px, 45%);
+               object-fit: cover;
+            }
+
+            .card-info {
+               display: flex;
+               flex-direction: column;
+               gap: 1.5em;
+               padding: 1.5em;
+
+               h3 {
+                  font-family: "AbhayaLibre";
+                  font-size: 2.5rem;
+               }
+
+               h4 {
+                  font-weight: var(--f-normal);
+                  color: color-mix(in srgb, var(--clr-f-500), var(--clr-f-700));
+               }
+
+               p {
+                  font-weight: var(--f-normal);
+                  color: var(--clr-f-700);
+               }
+
+               span {
+                  font-weight: var(--f-light);
+                  color: var(--clr-f-500);
+                  text-align: right;
+                  font-size: .9em;
+               }
+
+               .type {
+                  text-transform: uppercase;
+                  margin-bottom: 0.3em;
+                  font-size: .8em;
+               }
+
+               .price {
+                  background-color: var(--clr-green);
+                  width: fit-content;
+                  padding: 0.2em 0.6em 0.1em;
+                  color: white;
+                  font-family: "AbhayaLibre";
+                  font-size: 1.2em;
+               }
+
+               .desc {
+                  padding-left: 1em;
+                  border-left: solid 2px
+                     color-mix(in srgb, var(--clr-f-100), var(--clr-f-300));
+               }
+
+               .starCount {
+                  display: flex;
+                  gap: 0.3em;
+                  align-items: center;
+                  font-size: 1.5em;
+               }
+
+               .star {
+                  height: 1em;
+                  width: 1em;
+                  border-radius: 100%;
+                  border: solid 2px var(--clr-green);
+
+                  position: relative;
+
+                  &.filled::before {
+                     content: "";
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     translate: -50% -50%;
+                     height: 0.5em;
+                     width: 0.5em;
+                     background-color: var(--clr-green);
+                     border-radius: 100%;
+                  }
+               }
+               .opinionCount {
+                  font-size: 0.7em;
+                  color: var(--clr-f-300);
+               }
+
+               .row {
+                  display: flex;
+                  justify-content: space-between;
+
+                  .col:nth-of-type(2) {
+                     display: flex;
+                     flex-direction: column;
+                     align-items: end;
+                  }
+               }
             }
          }
       }
@@ -232,6 +331,64 @@ section#tours-list {
       }
       span {
          font-size: 0.9em;
+      }
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+   .tours-list-filter {
+      gap: 2ch !important;
+      font-size: 0.8rem;
+
+      button {
+         padding: 1ch;
+      }
+
+      img {
+         width: 70px !important;
+      }
+   }
+   .tours-list-items {
+      .card {
+         flex-direction: column !important;
+
+         img {
+            width: 100% !important;
+            max-height: 200px;
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .our-tours-description {
+      width: 100%;
+   }
+   .tours-list-filter {
+      grid-template-columns: repeat(2, 1fr) !important;
+
+      img {
+         display: none;
+      }
+   }
+   .starCount {
+      font-size: 1.2em !important;
+   }
+
+   .card {
+      h3 {
+         font-size: 1.5em !important;
+      }
+   }
+}
+
+@media only screen and (max-width: 524px) {
+   .experiences-container {
+      .row {
+         flex-direction: column !important;
+      }
+      .experience-card {
+         max-height: 250px;
       }
    }
 }

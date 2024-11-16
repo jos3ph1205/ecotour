@@ -121,7 +121,7 @@ BASE STYLING
 
 *:focus-visible {
    outline: none;
-   box-shadow: 0 0 0 3px var(--clr-green);
+   box-shadow: 0 0 0px 3px var(--clr-base);
 }
 @keyframes focus {
    100% {
@@ -130,7 +130,7 @@ BASE STYLING
    }
 }
 html {
-   /* scroll-behavior: smooth; */
+   scroll-behavior: smooth;
 }
 body {
    position: relative;
@@ -221,6 +221,7 @@ section:first-child {
    flex-direction: column;
    gap: 1ch;
    font-size: 1rem;
+   text-align: center;
 }
 .section-title h2 {
    font-size: 3.5em;
@@ -385,4 +386,24 @@ footer {
 .footer-wrapper .title {
    color: var(--clr-green);
    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+   :root {
+      --padding-i: 2rem;
+   }
+   .section-title {
+      font-size: 0.7rem;
+   }
+   .book-container {
+      flex-direction: column;
+      text-align: center;
+   }
+}
+
+@media only screen and (max-width: 524px) {
+   ::-webkit-scrollbar {
+      width: 10px !important;
+      height: 10px !important;
+   }
 }
